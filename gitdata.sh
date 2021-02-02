@@ -5,6 +5,7 @@
 gitlist=(
 		.private
 		Liemani.github.io
+		debug
 		env
 		memo
 		playground

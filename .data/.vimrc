@@ -5,7 +5,7 @@
 let g:netrw_banner = 0       " hide banner
 let g:netrw_liststyle = 3    " tree style
 " let g:netrw_browse_split = 0 " open file in the same window
-let g:netrw_winsize = 50     " open explore with 25% of total size
+" let g:netrw_winsize = 50     " open explore with n% of total size
 
 "------------------------------------------------------------
 
@@ -96,10 +96,11 @@ set hlsearch
 "------------------------------------------------------------
 " Mappings
 
-map <F2> :Vex<CR>
-map <F3> :mksession! ~/programming/git/.private/vimsession/
-map <F4> :qa<CR>
-map <F5> :set nonumber<CR>
+nnoremap <F2> :e .<CR>
+nnoremap <F3> :mksession! ~/programming/git/.private/vimsession/
+nnoremap <F4> :q<CR><C-W>h
+nnoremap <F5> :e<CR>
+nnoremap <F6> :set nonumber<CR>
 
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
