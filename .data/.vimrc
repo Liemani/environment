@@ -99,7 +99,8 @@ set hlsearch
 map <F2> :Vex<CR>
 map <F3> :mksession! ~/programming/git/.private/vimsession/
 map <F4> :qa<CR>
-map <F5> :set nonumber<CR>
+map <F5> :e<CR>
+map <F6> :set nonumber<CR>
 
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
