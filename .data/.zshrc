@@ -19,7 +19,7 @@ zstyle ':vcs_info:git:*' formats '%F{246}(%F{34}%r%F{246}/%F{34}%b%F{246}) '
 zstyle ':vcs_info:*' enable git
 
 # Set up the prompt (with git branch name)
-PROMPT='%F{240}%T $vcs_info_msg_0_%F{208}%2~ %F{111}%#%f '
+PROMPT='%F{240}%T %F{208}%2~ $vcs_info_msg_0_%F{111}%#%f '
 
 
 
@@ -45,6 +45,7 @@ alias cdgitroot="cd $(git rev-parse --show-toplevel)"
 alias setenv="source $env/setenv.sh"
 
 alias record="zsh $aux/record.sh"
+alias dump="zsh $aux/dump.sh"
 alias gitlog="git log --all --graph --oneline"
 alias vimgitlog="vim <(git log --all --graph --oneline)"
 alias vimall="zsh $aux/vimall.sh"
