@@ -9,7 +9,7 @@ else
 	git_address=https://github.com/
 fi
 
-if [[ $# -ne 0]]; then
+if [[ $# -ne 0 ]]; then
 	gitlist=$@
 fi
 
