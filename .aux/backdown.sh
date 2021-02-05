@@ -9,6 +9,10 @@ else
 	git_address=https://github.com/
 fi
 
+if [[ $# -ne 0]]; then
+	gitlist=$@
+fi
+
 for ((i = $#gitlist; i > 0; i--)); do
 	if [[ -d $git/$gitlist[i] ]]; then
 		gitlist[i]=$git/$gitlist[i]
