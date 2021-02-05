@@ -10,7 +10,9 @@ else
 fi
 
 if [[ $# -ne 0 ]]; then
-	gitlist=$@
+	gitlist=()
+	for argument in $@
+		gitlist+= $argument
 fi
 
 for ((i = $#gitlist; i > 0; i--)); do
