@@ -16,5 +16,7 @@ git clone https://github.com/harm-smits/gnl-unit-test.git "$dest_path/gnl-unit-t
 git clone https://github.com/Mazoise/42TESTERS-GNL.git "$dest_path/42TESTERS-GNL"
 git clone https://github.com/PandaCoustik/Test-42.git "$dest_path/Test-42"
 git clone https://github.com/Tripouille/gnlTester.git "$dest_path/gnlTester"
+git clone https://github.com/Hellio404/Get_Next_Line_Tester "$dest_path/Get_Next_Line_Tester"
+git clone https://github.com/kohyounghwan/Get_Next_Line_Tester "$dest_path/Get_Next_Line_Tester"
 
 unset dest_path
