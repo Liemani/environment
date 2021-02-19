@@ -4,7 +4,7 @@ source $(dirname $0)/.data/.zshrc
 
 
 
-if [[ -z $programming ]]; then
+if [[ -e $programming ]]; then
 	echo source $data/.zshrc >> $HOME/.zshrc
 	echo source $data/.vimrc >> $HOME/.vimrc
 fi
