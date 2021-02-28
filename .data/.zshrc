@@ -46,7 +46,7 @@ alias setenv="source $env/setenv.sh"
 
 alias record="zsh $aux/record.sh"
 alias memo="zsh $aux/memo.sh"
-alias gitlog="git log --branches --graph --oneline"
+alias gitlog="git log --all --graph --oneline"
 alias vimgitlog="vim <(git log --all --graph --oneline)"
 alias vimall="zsh $aux/vimall.sh"
 alias vimcommand="zsh $aux/vimcommand.sh"
