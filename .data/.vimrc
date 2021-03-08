@@ -96,7 +96,7 @@ set hlsearch
 "------------------------------------------------------------
 " Mappings
 
-nnoremap <F2> :Vex<CR><C-W>=
+nnoremap <F2> :e .<CR>
 nnoremap <F3> :mksession! ~/programming/git/.private/vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
