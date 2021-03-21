@@ -100,7 +100,7 @@ nnoremap <F2> :e .<CR>
 nnoremap <F3> :mksession! ~/programming/git/.private/vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
-nnoremap <F6> :set nonumber<CR>
+nnoremap <F6> :set number!<CR>
 
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
