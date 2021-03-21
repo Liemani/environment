@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# source cariables
+# source variables
 
 source $(dirname $0)/pathvar.sh
 source $env/uservar.sh
