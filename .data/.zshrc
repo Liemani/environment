@@ -32,11 +32,14 @@ export pathvar=$data/pathvar.sh
 # automation
 ## simple alias
 
-alias ls="ls -alp | grep -v .swp"
+alias ls="ls -alp"
+alias lsgrep="ls | grep -v .swp"
 alias sourcezshrc="source $HOME/.zshrc"
-alias gccsafe="gcc -Wall -Wextra -Werror"
+alias compile="clang -Wall -Wextra -Werror"
+alias loopleaks="zsh $aux/loopleaks.sh"
 alias today="echo 20\$(date \"+%y%m%d\")"
 alias cdgitroot="cd $(git rev-parse --show-toplevel)"
+alias norminetter="norminette -R CheckForbiddenSourceHeader"
 
 
 
@@ -46,8 +49,9 @@ alias setenv="source $env/setenv.sh"
 
 alias record="zsh $aux/record.sh"
 alias memo="zsh $aux/memo.sh"
+# alias gitlog="git log --all --graph --max-count=80 --oneline"
+# alias vimgitlog="vim <(git log --all --graph --oneline)"
 alias gitlog="git log --all --graph --oneline"
-alias vimgitlog="vim <(git log --all --graph --oneline)"
 alias vimall="zsh $aux/vimall.sh"
 alias vimcommand="zsh $aux/vimcommand.sh"
 alias vimsession="zsh $aux/vimsession.sh"

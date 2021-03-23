@@ -8,8 +8,7 @@ fi
 
 git clone https://github.com/Kwevan/PRINTF_TESTER.git "$dest_path/PRINTF_TESTER"
 git clone https://github.com/Mazoise/42TESTERS-PRINTF.git "$dest_path/42TESTERS-PRINTF"
-git clone https://github.com/gabinfielder/pft.git "$dest_path/pft"
-git clone https://github.com/cclaude42/PFT_2019.git "$dest_path/PFT_2019"
+git clone https://github.com/gavinfielder/pft.git "$dest_path/pft"
 git clone https://github.com/charMstr/printf_lover_v2.git "$dest_path/printf_lover_v2"
 git clone https://github.com/AntoineBourin/printf-tester.git "$dest_path/printf-tester"
 git clone https://github.com/cacharle/ft_printf_test.git "$dest_path/ft_printf_test"

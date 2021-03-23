@@ -102,6 +102,9 @@ nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> :set number!<CR>
 
+" disable shift-k
+map <S-k> <Nop>
+
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
 " nnoremap <C-K> <C-W><C-K>
@@ -112,8 +115,8 @@ nnoremap GT gT
 nnoremap GG G
 
 " make possible two button input the same time
-inoremap jf <esc>
 inoremap fj <esc>
+inoremap jf <esc>
 " nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------

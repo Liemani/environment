@@ -7,10 +7,11 @@ gitlist=(
 		Liemani.github.io
 		debug
 		env
-		memo
+		note
 		playground
 		seoul42_project
-		seoul42_report
+		variabledText
+		siteTool
 		)
 
 
