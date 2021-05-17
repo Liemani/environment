@@ -32,8 +32,8 @@ export pathvar=$data/pathvar.sh
 # automation
 ## simple alias
 
-alias ls="ls -alp"
-alias lsgrep="ls | grep -v .swp"
+alias ls="ls -Alp"
+alias list="ls | grep -v .swp | sort -k1,1 -k9,9 -r"
 alias sourcezshrc="source $HOME/.zshrc"
 alias compile="clang -Wall -Wextra -Werror"
 alias loopleaks="zsh $aux/loopleaks.sh"
