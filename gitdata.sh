@@ -2,17 +2,16 @@
 
 # This is git repository name list.
 
-gitlist=(
-		.private
-		Liemani.github.io
-		debug
-		env
-		note
-		playground
-		seoul42_project
-		variabledText
-		siteTool
-		)
+repositories=(
+	.private
+	Liemani.github.io
+	debug
+	env
+	note
+	playground
+	seoul42_project
+	workspace
+	variabledText)
 
 
 

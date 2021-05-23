@@ -23,55 +23,32 @@ PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{111}%#%f '
 
 
 
-# variable
-
-export pathvar=$data/pathvar.sh
-
-
-
 # automation
-## simple alias
+## simple aliases
 
 alias ls="ls -Alp"
 alias list="ls | grep -v .swp | sort -k1,1 -k9,9 -r"
-alias sourcezshrc="source $HOME/.zshrc"
 alias compile="clang -Wall -Wextra -Werror"
-alias loopleaks="zsh $aux/loopleaks.sh"
 alias today="echo 20\$(date \"+%y%m%d\")"
 alias cdgitroot="cd $(git rev-parse --show-toplevel)"
 alias norminetter="norminette -R CheckForbiddenSourceHeader"
-
-
-
-## program alias
-
-alias setenv="source $env/setenv.sh"
-
-alias record="zsh $aux/record.sh"
-alias memo="zsh $aux/memo.sh"
-# alias gitlog="git log --all --graph --max-count=80 --oneline"
+alias gitlog="git log --all --graph --max-count=75 --oneline"
+# alias gitlog="git log --all --graph --oneline"
 # alias vimgitlog="vim <(git log --all --graph --oneline)"
-alias gitlog="git log --all --graph --oneline"
-alias vimall="zsh $aux/vimall.sh"
-alias vimcommand="zsh $aux/vimcommand.sh"
-alias vimsession="zsh $aux/vimsession.sh"
-
-alias gitpush="zsh $aux/gitpush.sh"
-
-alias backdown="zsh $aux/backdown.sh"
-alias backcheck="zsh $aux/backcheck.sh"
-alias backup="zsh $aux/backup.sh"
-
-vimassembly() {
-	gccsafe -S $1.c && vim $1.s
-}
 
 
 
-## vim alias
+## script aliases
+
+alias zshrc="source $HOME/.zshrc"
+alias setenv="source $env/setenv.sh"
+alias aux="zsh $aux/foundation/aux.sh"
+alias vim="aux _vim"
+
+
+
+## vim aliases
 
 alias vimzshrc="vim $data/.zshrc"
 alias vimvimrc="vim $data/.vimrc"
 alias vimsetenv="vim $env/setenv.sh"
-alias vimvimsession="vim $private/vimsession"
-alias vimrecord="vim $private/record.txt"

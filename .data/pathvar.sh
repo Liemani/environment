@@ -1,14 +1,12 @@
 #!/bin/zsh
 
-programming=$HOME/programming
+export programming=$HOME/programming
 
-git=$programming/git
-local=$programming/local
+export git=$programming/git
+export local=$programming/local
 
-private=$git/.private
-env=$git/env
+export private=$git/.private
+export env=$git/env
 
-vimsession=$private/vimsession
-
-aux=$env/.aux
-data=$env/.data
+export aux=$env/.aux
+export data=$env/.data
