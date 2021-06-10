@@ -14,7 +14,7 @@ for file in $@; do
 	if [[ $? -eq 0 ]]; then
 		file_array+=$aux_command
 	else
-		file_array+=$aux/$file
+		file_array+=$aux/$file.sh
 	fi
 done
 vim $file_array

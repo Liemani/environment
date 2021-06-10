@@ -5,9 +5,9 @@ if [[ $# -eq 0 ]]; then
 	exit 0
 fi
 
-for paths in $@; do
+for local_repo in $@; do
 	echo -n "\n\n\n"
-	echo path: $paths
-	cd $paths
+	echo path: \$git${local_repo#"$git"}
+	cd $local_repo
 	git pull
 done

@@ -1,16 +1,13 @@
 #!/bin/zsh
 
-source $env/gitdata.sh
-
 if [[ $# -ne 0 ]]; then
 	repositories=($@)
+	repositories=(${repositories/#/$git\/})
+else
+	repositories=($(find $git -depth 1))
 fi
 
-declare -a repository_paths
 for repository in $repositories; do
-	if [[ -d $git/$repository ]]; then
-		repository_paths+=$git/$repository
-	fi
+	cd $repository
+	aux push
 done
-
-aux gitpush $repository_paths

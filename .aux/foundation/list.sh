@@ -1,12 +1,11 @@
 #!/bin/zsh
 
 cd $aux
+list=$(find . -iname "*.sh")
 if [[ $# -eq 0 ]]; then
-	find . -iname "*.sh" -exec basename {} \; \
-		| sed "s/\.sh$//"
+	echo $list | xargs basename | sed "s/\.sh$//" | sort
 elif [[ $# -eq 1 && $1 == "-l" ]]; then
-	find . -iname "*.sh" \
-		| sed "s/^\./\$aux/"
+	echo $list | sed "s/^\./\$aux/"
 else
 	echo 'usage: aux list [-l]'
 	exit 1

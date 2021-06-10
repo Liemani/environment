@@ -32,14 +32,15 @@ advanced aux commands:
 
 ### Features
 
+- Target OS: macOS
 - Target shell: zsh
 - Liemani's `.zshrc`
 - Liemani's `.vimrc`
 - Liemani's `prompt`
 - Liemani's `aux` program
-- You can save vim session to `<repogitory>/.vimsession/<repository_name>` by pressing `<F3>` in vim
-  - You have to `mkdir .vimsession` before this to work
-  - And you can load that session easily by `aux vimsession <repository_name>`
+- You can save vim session to `<repository>/.vimsession/<session name you want>` by pressing `<F3>` in vim
+  - You have to `mkdir <repository>/.vimsession` before this to work
+  - And you can load that session easily by `aux vimsession <vim session name>`
     - Test `aux vimsession env` which I saved! :D
 
 ### Deep Features

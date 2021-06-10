@@ -4,7 +4,7 @@ if  [[ $# -eq 0 ]]; then
 	echo 'usage: aux <aux_command> <arguments>'
 	echo
 	echo 'basic aux commands:'
-	echo '    ls\t\tList all aux commands'
+	echo '    list\tList all aux commands'
 	echo '    vim\t\tCreate or edit aux command'\''s script file'
 	echo '    backdown\tDo '\''git clone'\'' or '\''git pull'\'' for all repositories registered in '\''gitdata.sh'\'
 	echo '    backcheck\tDo '\''git status'\'' for all repositories registered in '\''gitdata.sh'\'
@@ -30,7 +30,7 @@ alias vim="aux _vim"
 
 source $find $1 $aux
 if [[ $? -eq 1 ]]; then
-	>&2 echo "aux.sh: There is no aux command of name [$1.sh]"
+	>&2 echo "aux.sh: There is no aux command of name [$1]"
 	return 1
 fi
 

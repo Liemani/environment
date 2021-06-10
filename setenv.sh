@@ -4,7 +4,7 @@ source $(dirname $0)/.data/.zshrc
 
 
 
-if [[ ! -e $programming ]]; then
+if [[ ! -e $git ]]; then
 	echo source $data/.zshrc >> $HOME/.zshrc
 	echo source $data/.vimrc >> $HOME/.vimrc
 fi
@@ -12,7 +12,6 @@ fi
 
 
 backbone_path_list=(
-	$programming
 	$git
 	$local
 	)

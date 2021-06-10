@@ -3,7 +3,7 @@
 #include "t_\(lowercase name).h"
 #include "util.h"
 
-t_\(lowercase name)	*alloc_\(lowercase name)(void)
+static t_\(lowercase name)	*alloc_\(lowercase name)(void)
 {
 	t_\(lowercase name)	*p_\(lowercase name);
 
@@ -11,12 +11,12 @@ t_\(lowercase name)	*alloc_\(lowercase name)(void)
 	return (p_\(lowercase name));
 }
 
-void	init_\(lowercase name)(t_\(lowercase name) *p_\(lowercase name))
+static void					init_\(lowercase name)(t_\(lowercase name) *p_\(lowercase name))
 {
 	// Compose init code here..
 }
 
-t_\(lowercase name)	*new_\(lowercase name)
+t_\(lowercase name)			*new_\(lowercase name)(void)
 {
 	t_\(lowercase name)	*p_\(lowercase name);
 
@@ -25,7 +25,7 @@ t_\(lowercase name)	*new_\(lowercase name)
 	return (p_\(lowercase name));
 }
 
-void	free_\(lowercase name)(t_\(lowercase name) *p_\(lowercase name))
+void						free_\(lowercase name)(t_\(lowercase name) *p_\(lowercase name))
 {
 	// Compose free code here..
 	free(p_\(lowercase name));

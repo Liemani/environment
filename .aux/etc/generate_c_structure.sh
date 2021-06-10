@@ -16,3 +16,4 @@ cd $env/.tool
 echo uppercase name = $(echo $1 | tr "[:lower:]" "[:upper:]")"\n"lowercase name = $1 > name.variable
 ./variabledText.out template.h -o $2/t_$1.h
 ./variabledText.out template.c -o $2/t_$1.c
+rm name.variable

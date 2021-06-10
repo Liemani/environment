@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-export programming=$HOME/programming
-
-export git=$programming/git
+export git=$HOME/git
 export local=$programming/local
 
 export private=$git/.private

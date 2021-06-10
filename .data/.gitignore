@@ -1,5 +1,8 @@
-*.swp
-*.o
-*.a
-*.out
-.DS_Store
+*
+!*/
+!*.h
+!*.c
+!*.sh
+!*.txt
+!.vimsession/*
+!Makefile
