@@ -199,12 +199,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 54) / 108)
+let s:l = 23 - ((22 * winheight(0) + 54) / 108)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-32
-normal! 0
+23
+normal! 052|
 lcd ~/programming/git/env/.aux/foundation
 tabnext
 edit ~/programming/git/env/setenv.sh
@@ -341,12 +341,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 54) / 108)
+let s:l = 9 - ((8 * winheight(0) + 54) / 108)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+9
+normal! 024|
 lcd ~/programming/git/env/.aux/foundation
 wincmd w
 argglobal
@@ -1016,12 +1016,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 8 - ((7 * winheight(0) + 13) / 26)
+let s:l = 33 - ((14 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 022|
+33
+normal! 0
 wincmd w
 argglobal
 if bufexists("~/programming/git/env/.aux/foundation/find.sh") | buffer ~/programming/git/env/.aux/foundation/find.sh | else | edit ~/programming/git/env/.aux/foundation/find.sh | endif
@@ -1139,12 +1139,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 24 - ((21 * winheight(0) + 13) / 26)
+let s:l = 19 - ((16 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
-normal! 012|
+19
+normal! 05|
 lcd ~/programming/git/env/.aux/foundation
 wincmd w
 argglobal
@@ -1530,11 +1530,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 27) / 54)
+let s:l = 3 - ((2 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+3
 normal! 0
 lcd ~/programming/git/env/.aux/foundation
 wincmd w
@@ -1654,11 +1654,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 26) / 53)
+let s:l = 20 - ((19 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+20
 normal! 0
 lcd ~/programming/git/env/.aux/foundation
 wincmd w
@@ -2461,8 +2461,12 @@ exe 'vert 5resize ' . ((&columns * 102 + 154) / 309)
 exe '6resize ' . ((&lines * 53 + 55) / 111)
 exe 'vert 6resize ' . ((&columns * 102 + 154) / 309)
 tabnext
-edit ~/programming/git/env/.aux/debug/debug.sh
+edit ~/programming/git/env/.tool/template.h
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -2470,6 +2474,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '1resize ' . ((&lines * 54 + 55) / 111)
+exe '2resize ' . ((&lines * 53 + 55) / 111)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -2484,8 +2490,8 @@ setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=:#
-setlocal commentstring=#\ %s
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal completefunc=
 setlocal nocopyindent
@@ -2500,8 +2506,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'zsh'
-setlocal filetype=zsh
+if &filetype != 'cpp'
+setlocal filetype=cpp
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -2523,8 +2529,8 @@ setlocal iminsert=0
 setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetShIndent()
-setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -2541,7 +2547,7 @@ setlocal nrformats=bin,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=ccomplete#Complete
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -2555,7 +2561,7 @@ setlocal noshortname
 setlocal showbreak=
 setlocal sidescrolloff=-1
 setlocal signcolumn=auto
-setlocal nosmartindent
+setlocal smartindent
 setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
@@ -2565,8 +2571,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'zsh'
-setlocal syntax=zsh
+if &syntax != 'cpp'
+setlocal syntax=cpp
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -2585,41 +2591,171 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 54) / 108)
+let s:l = 1 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 09|
+1
+normal! 0
 lcd ~/programming/git/env/.aux/foundation
-tabnext 1
+wincmd w
+argglobal
+if bufexists("~/programming/git/env/.tool/template.c") | buffer ~/programming/git/env/.tool/template.c | else | edit ~/programming/git/env/.tool/template.c | endif
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'c'
+setlocal filetype=c
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=ccomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'c'
+setlocal syntax=c
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 8 - ((7 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+8
+normal! 023|
+lcd ~/programming/git/env/.aux/foundation
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 54 + 55) / 111)
+exe '2resize ' . ((&lines * 53 + 55) / 111)
+tabnext 7
 set stal=1
-badd +1 ~/programming/git/env/setenv.sh
+badd +1 ~/programming/git/env/README.md
 badd +1 ~/programming/git/env/.aux/foundation/aux.sh
+badd +1 ~/programming/git/env/setenv.sh
 badd +1 ~/programming/git/env/gitdata.sh
 badd +1 ~/programming/git/env/.aux/vim/_vim.sh
 badd +1 ~/programming/git/env/.aux/git/backdown.sh
-badd +1 ~/programming/git/env/.aux/debug/debug.sh
+badd +6 ~/programming/git/env/.aux/debug/debug.sh
 badd +1 ~/programming/git/env/.data/.zshrc
 badd +1 ~/programming/git/env/.data/.vimrc
+badd +1 ~/programming/git/env/uservar.sh
 badd +1 ~/programming/git/env/.aux/foundation/find.sh
 badd +1 ~/programming/git/env/.aux/foundation/ls.sh
-badd +0 ~/programming/git/env/.aux/foundation/rm.sh
 badd +1 ~/programming/git/env/.aux/foundation/vim.sh
 badd +1 ~/programming/git/env/.aux/vim/vimsession.sh
 badd +1 ~/programming/git/env/.aux/git/gitpull.sh
-badd +0 ~/programming/git/env/.aux/git/backcheck.sh
+badd +1 ~/programming/git/env/.aux/git/backcheck.sh
 badd +1 ~/programming/git/env/.aux/git/gitstatus.sh
 badd +1 ~/programming/git/env/.aux/git/backup.sh
 badd +1 ~/programming/git/env/.aux/git/gitpush.sh
+badd +1 ~/programming/git/env/.aux/foundation/rm.sh
 badd +1 ~/programming/git/env/.aux/foundation/0
 badd +1 ~/programming/git/env/.aux/foundation/git/backdown.sh
 badd +1 ~/programming/git/env/.aux/foundation/git/backcheck.sh
 badd +1 ~/programming/git/env/.aux/foundation/git/gitpush.sh
 badd +1 ~/programming/git/env/.aux/foundation/.ls.sh.swp
 badd +1 ~/programming/git/env/.aux/foundation/git/gitstatus.sh
-badd +0 ~/programming/git/env/README.md
-badd +0 ~/programming/git/env/uservar.sh
+badd +1 ~/programming/git/env/.tool/template.h
+badd +0 ~/programming/git/env/.tool/template.c
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

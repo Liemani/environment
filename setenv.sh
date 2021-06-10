@@ -17,10 +17,11 @@ backbone_path_list=(
 	$local
 	)
 
-for backbone_path in $backbone_path_list
+for backbone_path in $backbone_path_list; do
 	if [[ ! -d $backbone_path ]]; then
 		mkdir $backbone_path
 	fi
+done
 
 unset backbone_path_list
 unset backbone_path
@@ -55,12 +56,13 @@ else
 	git_address=https://github.com/
 fi
 
-for repository in $gitlist
+for repository in $repositories; do
 	if [[ ! -d $git/$repository ]]; then
 		echo path: $repository
 		git clone $git_address$git_user_id/$repository.git $git/$repository
 		echo
 	fi
+done
 
 
 
@@ -70,7 +72,7 @@ fi
 
 
 
-unset gitlist
+unset repositories
 unset git_user_name
 unset git_user_email
 unset git_address

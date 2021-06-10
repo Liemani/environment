@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	cd $(dirname $1)
 	1=$(basename $1)
-elif [[ $# -eq 2 ]]; then
+elif [[ $1 == "-S" ]]; then
 	cd $(dirname $2)
 	2=$(basename $2)
 fi
