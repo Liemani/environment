@@ -7,7 +7,7 @@ typedef struct				s_\(lowercase name)
 {
 }							t_\(lowercase name);
 
-t_\(lowercase name)			*new_\(lowercase name)();
-void						free_\(lowercase name)(t_\(lowercase name) *p_\(lowercase name));
+t_\(lowercase name)			*\(lowercase name)_new();
+void						\(lowercase name)_free(t_\(lowercase name) *p_\(lowercase name));
 
 #endif
