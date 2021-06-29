@@ -38,6 +38,7 @@ while [[ $times -gt 0 ]]; do
 	./$push_swap $ARG > .push_swap_result
 	checker_result=$(cat .push_swap_result | ./$checker $ARG)
 	instruction_count=$(cat .push_swap_result | wc -l)
+	rm .push_swap_result
 
 	echo "[$checker_result]	instruction count: $instruction_count"
 	if [[ $checker_result != OK || $instruction_count -gt $limit ]]; then

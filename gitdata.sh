@@ -3,7 +3,7 @@
 # This is git repository name list.
 
 repositories=(
-	.private
+	minishell
 	Liemani.github.io
 	debug
 	env
@@ -11,7 +11,8 @@ repositories=(
 	playground
 	seoul42_project
 	workspace
-	variabledText)
+	variabledText
+	.private)
 
 
 
