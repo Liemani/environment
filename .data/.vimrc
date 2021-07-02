@@ -97,14 +97,15 @@ let g:netrw_liststyle = 3    " tree style
 " Key Mappings
 
 " nnoremap <F1> :Stdheader<CR>  " Automatically mapped by '~/.vim/plugin/stdheader.vim'
+nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
 nnoremap <F2> :e .<CR>
-nnoremap <F3> :mksession! $git_root/.vimsession/
+nnoremap <F3> :mksession! $git_root/.vimsession/$git_repo<CR>
+nnoremap <F3><F3> :mksession! $git/.private/vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> :args `find . -iname \*.\[hc\]`<CR>
 nnoremap <F7> /<C-R><C-W><CR>:vimgrep <C-R><C-W> ##<CR>:copen<CR>
-nnoremap <F10> :mksession! $git/.private/vimsession/$git_repo<CR>
-nnoremap <F12> gg<S-V>}zf
+nnoremap <F12> :set modifiable!<CR>:set write!<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
 
 " disable shift-k

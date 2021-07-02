@@ -10,16 +10,19 @@ nnoremap GT gT
 map K <Nop>
 vmap gx <Plug>NetrwBrowseXVis
 nmap gx <Plug>NetrwBrowseX
+nnoremap <F3><F3> :mksession! $git/.private/vimsession/
+nnoremap <F1> :StdheaderggV}zf
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
-map <F1> :Stdheader
+vmap <F1> :Stdheader
+omap <F1> :Stdheader
 nnoremap <F12> ggV}zf
-nnoremap <F10> :mksession! $git/.private/vimsession/$git_repo
+nnoremap <F10> :mksession! $git/.private/vimsession/
 nnoremap <F7> /:vimgrep  ##:copen
 nnoremap <F6> :args `find . -iname \*.\[hc\]`
 nnoremap <F5> :e
 nnoremap <F4> :qh
-nnoremap <F3> :mksession! $git_root/.vimsession/
+nnoremap <F3> :mksession! $git_root/.vimsession/$git_repo
 nnoremap <F2> :e .
 vmap <BS> "-d
 vmap <D-x> "*d
@@ -71,6 +74,7 @@ argglobal
 %argdel
 $argadd setenv.sh
 set stal=2
+tabnew
 tabnew
 tabnew
 tabnew
@@ -200,7 +204,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -224,9 +228,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 108 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 108 + 162) / 325)
-exe 'vert 3resize ' . ((&columns * 107 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 107 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 108 + 161) / 323)
+exe 'vert 3resize ' . ((&columns * 106 + 161) / 323)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -342,7 +346,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -465,7 +469,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -589,7 +593,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -597,9 +601,9 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe 'vert 1resize ' . ((&columns * 108 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 108 + 162) / 325)
-exe 'vert 3resize ' . ((&columns * 107 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 107 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 108 + 161) / 323)
+exe 'vert 3resize ' . ((&columns * 106 + 161) / 323)
 tabnext
 edit ~/git/env/.data/.zshrc
 set splitbelow splitright
@@ -620,10 +624,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 80 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 3resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 4resize ' . ((&columns * 80 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 80 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 81 + 161) / 323)
+exe 'vert 3resize ' . ((&columns * 79 + 161) / 323)
+exe 'vert 4resize ' . ((&columns * 80 + 161) / 323)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -709,7 +713,7 @@ setlocal noshortname
 setlocal showbreak=
 setlocal sidescrolloff=-1
 setlocal signcolumn=auto
-setlocal nosmartindent
+setlocal smartindent
 setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
@@ -739,11 +743,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((0 * winheight(0) + 53) / 106)
+let s:l = 3 - ((2 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+3
 normal! 0
 lcd ~/git/env
 wincmd w
@@ -875,12 +879,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 103 - ((77 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+103
+normal! 017|
 lcd ~/git/env
 wincmd w
 argglobal
@@ -999,7 +1003,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 53) / 106)
+let s:l = 2 - ((1 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1123,7 +1127,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 53) / 106)
+let s:l = 6 - ((5 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1131,10 +1135,10 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe 'vert 1resize ' . ((&columns * 80 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 3resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 4resize ' . ((&columns * 80 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 80 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 81 + 161) / 323)
+exe 'vert 3resize ' . ((&columns * 79 + 161) / 323)
+exe 'vert 4resize ' . ((&columns * 80 + 161) / 323)
 tabnext
 edit ~/git/env/.tool/template.c
 set splitbelow splitright
@@ -1149,8 +1153,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 162 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 162 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 161 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 161 + 161) / 323)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -1266,7 +1270,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1390,7 +1394,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1398,9 +1402,8 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 162 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 162 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 161 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 161 + 161) / 323)
 tabnext
 edit ~/git/env/.aux/foundation/aux.sh
 set splitbelow splitright
@@ -1421,10 +1424,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 80 + 162) / 325)
-exe 'vert 3resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 4resize ' . ((&columns * 80 + 162) / 325)
+exe 'vert 1resize ' . ((&columns * 81 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 80 + 161) / 323)
+exe 'vert 3resize ' . ((&columns * 79 + 161) / 323)
+exe 'vert 4resize ' . ((&columns * 80 + 161) / 323)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -1540,7 +1543,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 53) / 106)
+let s:l = 2 - ((1 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1664,7 +1667,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1788,7 +1791,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1912,7 +1915,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 53) / 106)
+let s:l = 1 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1920,27 +1923,161 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe 'vert 1resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 2resize ' . ((&columns * 80 + 162) / 325)
-exe 'vert 3resize ' . ((&columns * 81 + 162) / 325)
-exe 'vert 4resize ' . ((&columns * 80 + 162) / 325)
-tabnext 4
+exe 'vert 1resize ' . ((&columns * 81 + 161) / 323)
+exe 'vert 2resize ' . ((&columns * 80 + 161) / 323)
+exe 'vert 3resize ' . ((&columns * 79 + 161) / 323)
+exe 'vert 4resize ' . ((&columns * 80 + 161) / 323)
+tabnext
+edit ~/git/env/.aux/vim/vimsession.sh
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'zsh'
+setlocal filetype=zsh
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetShIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'zsh'
+setlocal syntax=zsh
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 10 - ((9 * winheight(0) + 55) / 110)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
+normal! 0
+lcd ~/git/env
+tabnext 3
 set stal=1
 badd +1 ~/git/env/README.md
 badd +1 ~/git/env/setenv.sh
 badd +1 ~/git/env/.data/.zshrc
+badd +1 ~/git/env/.tool/template.c
 badd +1 ~/git/env/.aux/foundation/aux.sh
+badd +0 ~/git/env/.aux/vim/vimsession.sh
 badd +1 ~/git/env/gitdata.sh
 badd +1 ~/git/env/uservar.sh
 badd +1 ~/git/env/.data/.vimrc
 badd +2 ~/git/env/.data/.gitignore
-badd +0 ~/git/env/.data/pathvar.sh
+badd +1 ~/git/env/.data/pathvar.sh
+badd +1 ~/git/env/.tool/template.h
 badd +1 ~/git/env/.aux/foundation/find.sh
 badd +1 ~/git/env/.aux/foundation/list.sh
 badd +1 ~/git/env/.aux/foundation/vim.sh
 badd +1 ~/git/env/.data/vimsession
-badd +0 ~/git/env/.tool/template.c
-badd +0 ~/git/env/.tool/template.h
+badd +1 ~/git/env
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -1952,7 +2089,6 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
