@@ -100,7 +100,7 @@ let g:netrw_liststyle = 3    " tree style
 nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
 nnoremap <F2> :e .<CR>
 nnoremap <F3> :mksession! $git_root/.vimsession/$git_repo<CR>
-nnoremap <F3><F3> :mksession! $git/.private/vimsession/
+nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> :args `find . -iname \*.\[hc\]`<CR>
