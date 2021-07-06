@@ -10,20 +10,20 @@ nnoremap GT gT
 map K <Nop>
 vmap gx <Plug>NetrwBrowseXVis
 nmap gx <Plug>NetrwBrowseX
-nnoremap <F3><F3> :mksession! $git/.private/vimsession/
 nnoremap <F1> :StdheaderggV}zf
+vmap <F1> :Stdheader
+nnoremap <F10> :set modifiable:set write
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
-vmap <F1> :Stdheader
-omap <F1> :Stdheader
-nnoremap <F12> ggV}zf
-nnoremap <F10> :mksession! $git/.private/vimsession/
+nnoremap <F12> :set nomodifiable:set nowrite
 nnoremap <F7> /:vimgrep  ##:copen
 nnoremap <F6> :args `find . -iname \*.\[hc\]`
 nnoremap <F5> :e
 nnoremap <F4> :qh
+nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F3> :mksession! $git_root/.vimsession/$git_repo
 nnoremap <F2> :e .
+omap <F1> :Stdheader
 vmap <BS> "-d
 vmap <D-x> "*d
 vmap <D-c> "*y
@@ -743,11 +743,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 55) / 110)
+let s:l = 4 - ((3 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
+4
 normal! 0
 lcd ~/git/env
 wincmd w
@@ -879,12 +879,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 103 - ((77 * winheight(0) + 55) / 110)
+let s:l = 108 - ((85 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-103
-normal! 017|
+108
+normal! 048|
 lcd ~/git/env
 wincmd w
 argglobal
@@ -1003,11 +1003,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 55) / 110)
+let s:l = 3 - ((2 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+3
 normal! 0
 lcd ~/git/env
 wincmd w
@@ -1135,6 +1135,7 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 80 + 161) / 323)
 exe 'vert 2resize ' . ((&columns * 81 + 161) / 323)
 exe 'vert 3resize ' . ((&columns * 79 + 161) / 323)
@@ -2066,11 +2067,11 @@ badd +1 ~/git/env/setenv.sh
 badd +1 ~/git/env/.data/.zshrc
 badd +1 ~/git/env/.tool/template.c
 badd +1 ~/git/env/.aux/foundation/aux.sh
-badd +0 ~/git/env/.aux/vim/vimsession.sh
+badd +1 ~/git/env/.aux/vim/vimsession.sh
 badd +1 ~/git/env/gitdata.sh
 badd +1 ~/git/env/uservar.sh
 badd +1 ~/git/env/.data/.vimrc
-badd +2 ~/git/env/.data/.gitignore
+badd +0 ~/git/env/.data/.gitignore
 badd +1 ~/git/env/.data/pathvar.sh
 badd +1 ~/git/env/.tool/template.h
 badd +1 ~/git/env/.aux/foundation/find.sh
