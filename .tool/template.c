@@ -1,7 +1,10 @@
 \import name.variable
 
+#include <stdlib.h>
 #include "t_\(lowercase name).h"
 #include "lmt_util.h"
+
+//	stdlib.h: free()
 
 static t_\(lowercase name)	*\(lowercase name)_alloc(void)
 {
