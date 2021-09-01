@@ -1,8 +1,17 @@
-*
-!*/
-!*.h
-!*.c
-!*.sh
-!*.txt
-!.vimsession/*
-!Makefile
+# exculde all files
+# *
+# include all directories
+# !*/
+# include specific extension files
+# !*.h
+# !*.c
+# !*.sh
+# !*.txt
+# include specific files
+# !.vimsession/*
+# !Makefile
+
+.DS_Store
+*.o
+*.out
+*.swp

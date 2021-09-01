@@ -80,6 +80,8 @@ color desert
 " 	syntax on
 " endif
 
+" set cursorline
+
 set hlsearch
 
 " Functional
@@ -98,7 +100,8 @@ let g:netrw_liststyle = 3    " tree style
 
 " nnoremap <F1> :Stdheader<CR>  " Automatically mapped by '~/.vim/plugin/stdheader.vim'
 nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
-nnoremap <F2> :e .<CR>
+nnoremap <F1><F1> gg<S-V>}zf
+nnoremap <F2> :Explore<CR>
 nnoremap <F3> :mksession! $git_root/.vimsession/$git_repo<CR>
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR><C-W>h
@@ -130,3 +133,5 @@ inoremap jf <esc>
 vnoremap / : norm i//<CR>
 vnoremap ? : norm xx<CR>
 "------------------------------------------------------------
+" Macros
+let @1='zf%]]'
