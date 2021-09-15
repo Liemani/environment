@@ -130,8 +130,8 @@ inoremap jf <esc>
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
-vnoremap / : norm i//<CR>
-vnoremap ? : norm xx<CR>
+vnoremap / : norm i//	<CR>
+vnoremap ? : norm 3x<CR>
 "------------------------------------------------------------
 " Macros
 let @1='zf%]]'

@@ -27,7 +27,7 @@ PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{111}%#%f '
 ## simple aliases
 
 alias ls="ls -Alp"
-alias list="ls | grep -v '\.swp' | grep -v '\.o' | sort -k1,1r -k9,9"
+alias list="ls | grep -v -e '\.swp' -e '\.o' -e '\.DS_Store' | sort -k1,1r -k9,9"
 alias compile="clang -Wall -Wextra -Werror"
 alias today="echo 20\$(date \"+%y%m%d\")"
 alias cdgitroot="cd $(git rev-parse --show-toplevel)"

@@ -1,17 +1,29 @@
-# exculde all files
+# reference:
+# https://git-scm.com/docs/gitignore
+
+##
+# old setting
+# exclude all files
 # *
+#
 # include all directories
 # !*/
+#
 # include specific extension files
 # !*.h
 # !*.c
 # !*.sh
 # !*.txt
+#
 # include specific files
 # !.vimsession/*
 # !Makefile
+##
 
-.DS_Store
-*.o
+# exclude specific extension
+*.[ao]
 *.out
 *.swp
+
+# exclude specific files
+.DS_Store
