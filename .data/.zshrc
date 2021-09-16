@@ -19,7 +19,8 @@ zstyle ':vcs_info:git:*' formats '%F{246}(%F{34}%r%F{246}/%F{34}%b%F{246}) '
 zstyle ':vcs_info:*' enable git
 
 # Set up the prompt (with git branch name)
-PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{111}%#%f '
+# PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{111}%#%f '
+PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{240}$COLUMNS,$LINES %F{111}%#%f '
 
 
 
