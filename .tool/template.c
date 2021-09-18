@@ -13,7 +13,7 @@ static t_\(lowercase name)	*\(lowercase name)_alloc(void)
 
 static void	\(lowercase name)_init(t_\(lowercase name) *p_\(lowercase name))
 {
-	// Compose init code here..
+	//	Compose init code here..
 }
 
 t_\(lowercase name)	*\(lowercase name)_new(void)
@@ -27,6 +27,6 @@ t_\(lowercase name)	*\(lowercase name)_new(void)
 
 void	\(lowercase name)_free(t_\(lowercase name) *p_\(lowercase name))
 {
-	// Compose free code here..
+	//	Compose free code here..
 	free(p_\(lowercase name));
 }
