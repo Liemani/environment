@@ -23,13 +23,11 @@ fi
 
 # 2021-09-15
 vimsession=$git/$1/.vimsession
-echo test code vimsession=$vimsession
 if [[ -f $vimsession ]]; then
 	cd $vimsession
 	vim -S $vimsession
 else
 	vimsession=$git/.private/.vimsession/$1
-	echo test code vimsession=$vimsession
 	if [[ -f $vimsession ]]; then
 		cd $vimsession
 		vim -S $vimsession
