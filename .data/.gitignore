@@ -27,3 +27,7 @@
 
 # exclude specific files
 .DS_Store
+tags
+
+# exclude project target name
+minishell
