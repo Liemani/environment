@@ -12,20 +12,20 @@ vmap gx <Plug>NetrwBrowseXVis
 nmap gx <Plug>NetrwBrowseX
 nnoremap <F10> :set modifiable:set write
 vmap <F1> :Stdheader
-nnoremap <F1> :StdheaderggV}zf
+omap <F1> :Stdheader
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
 nnoremap <F12><F12> :set modifiable:set write
 nnoremap <F12> :set nomodifiable:set nowrite
 nnoremap <F7> /:vimgrep  ##:copen
-nnoremap <F6> :args `find . -iname \*.\[hc\]`
+nnoremap <F6> v:args `find . -iname \*.\[hc\]`
 nnoremap <F5> :e
 nnoremap <F4> :qh
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F3> :mksession! $git_root/.vimsession
 nnoremap <F2> :Explore
 nnoremap <F1><F1> ggV}zf
-omap <F1> :Stdheader
+nnoremap <F1> :StdheaderggV}zf
 vmap <BS> "-d
 vmap <D-x> "*d
 vmap <D-c> "*y
@@ -746,11 +746,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 55) / 110)
+let s:l = 5 - ((0 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+5
 normal! 0
 lcd ~/git/env
 wincmd w
@@ -882,12 +882,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 105 - ((76 * winheight(0) + 55) / 110)
+let s:l = 133 - ((104 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-105
-normal! 037|
+133
+normal! 019|
 lcd ~/git/env
 wincmd w
 argglobal
@@ -1138,6 +1138,7 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 80 + 161) / 322)
 exe 'vert 2resize ' . ((&columns * 81 + 161) / 322)
 exe 'vert 3resize ' . ((&columns * 78 + 161) / 322)
@@ -3251,13 +3252,14 @@ normal! zt
 30
 normal! 042|
 lcd ~/git/env
-tabnext 7
+tabnext 3
 set stal=1
 badd +1 ~/git/env/README.md
 badd +1 ~/git/env/setenv.sh
 badd +1 ~/git/env/.data/.zshrc
 badd +1 ~/git/env/.tool/template.c
 badd +1 ~/git/env/.aux/foundation/aux.sh
+badd +2 ~/git/env/.aux/git/pull.sh
 badd +1 ~/git/env/.aux/vim/vimsession.sh
 badd +1 ~/git/env/gitdata.sh
 badd +1 ~/git/env/uservar.sh
@@ -3268,17 +3270,16 @@ badd +1 ~/git/env/.tool/template.h
 badd +1 ~/git/env/.aux/foundation/find.sh
 badd +1 ~/git/env/.aux/foundation/list.sh
 badd +1 ~/git/env/.aux/foundation/vim.sh
+badd +1 ~/git/env/.aux/git/backdown.sh
+badd +1 ~/git/env/.aux/git/status.sh
+badd +1 ~/git/env/.aux/git/diff.sh
+badd +1 ~/git/env/.aux/git/backcheck.sh
+badd +1 ~/git/env/.aux/git/commit.sh
+badd +1 ~/git/env/.aux/git/amend.sh
+badd +1 ~/git/env/.aux/git/push.sh
+badd +1 ~/git/env/.aux/git/backup.sh
 badd +1 ~/git/env/.data/vimsession
 badd +1 ~/git/env
-badd +0 ~/git/env/.aux/git/backdown.sh
-badd +0 ~/git/env/.aux/git/backcheck.sh
-badd +0 ~/git/env/.aux/git/backup.sh
-badd +1 ~/git/env/.aux/git/status.sh
-badd +2 ~/git/env/.aux/git/pull.sh
-badd +0 ~/git/env/.aux/git/commit.sh
-badd +0 ~/git/env/.aux/git/diff.sh
-badd +0 ~/git/env/.aux/git/amend.sh
-badd +0 ~/git/env/.aux/git/push.sh
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
