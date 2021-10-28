@@ -108,8 +108,9 @@ nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> <C-W>v:args `find . -iname \*.\[hc\]`<CR>
 nnoremap <F7> /<C-R><C-W><CR>:vimgrep <C-R><C-W> ##<CR>:copen<CR>
-nnoremap <F12> :set nomodifiable<CR>:set nowrite<CR>
-nnoremap <F12><F12> :set modifiable<CR>:set write<CR>
+nnoremap <F11> :set nomodifiable<CR>:set nowrite<CR>
+nnoremap <F11><F11> :set modifiable<CR>:set write<CR>
+nnoremap <F12> :source ~/.vimrc<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
 
 " disable shift-k
@@ -134,4 +135,4 @@ vnoremap / : norm i//	<CR>
 vnoremap ? : norm 3x<CR>
 "------------------------------------------------------------
 " Macros
-let @1='zf%]]'
+let @q='zf%]]'
