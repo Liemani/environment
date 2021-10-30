@@ -107,7 +107,7 @@ nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> <C-W>v:args `find . -iname \*.\[hc\]`<CR>
-nnoremap <F7> /<C-R><C-W><CR>:vimgrep <C-R><C-W> ##<CR>:copen<CR>
+nnoremap <F7> /<C-R><C-W><CR>N:vimgrep <C-R><C-W> ##<CR>:copen<CR>
 nnoremap <F11> :set nomodifiable<CR>:set nowrite<CR>
 nnoremap <F11><F11> :set modifiable<CR>:set write<CR>
 nnoremap <F12> :source ~/.vimrc<CR>
