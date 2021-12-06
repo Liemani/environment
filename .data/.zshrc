@@ -36,6 +36,7 @@ alias today="echo 20\$(date \"+%y%m%d\")"
 alias cdgitroot="cd $(git rev-parse --show-toplevel)"
 alias norminetter="norminette -R CheckForbiddenSourceHeader"
 alias gitlog="git log --all --graph --max-count=100 --oneline"
+alias gitlogall="git log --all --graph --oneline"
 # alias gitlog="git log --all --graph --oneline"
 # alias vimgitlog="vim <(git log --all --graph --oneline)"
 
