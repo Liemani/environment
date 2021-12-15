@@ -28,33 +28,34 @@ PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{111}%#%f '
 # automation
 ## simple aliases
 
-alias ls="ls -Alp"
-alias mv="mv -i"	# prevent silent overwriting
-alias cp="cp -i"	# prevent silent overwriting
-alias list="ls | grep -v -e '\.swp' -e '\.o' -e '\.DS_Store' | sort -k1,1r -k9,9"
-alias compile="clang -Wall -Wextra -Werror"
-alias today="echo 20\$(date \"+%y%m%d\")"
-alias cdgitroot="cd $(git rev-parse --show-toplevel)"
-alias norminetter="norminette -R CheckForbiddenSourceHeader"
-alias gitlog="git log --all --graph --max-count=42 --oneline"
-alias gitlogall="git log --all --graph --oneline"
-# alias gitlog="git log --all --graph --oneline"
-# alias vimgitlog="vim <(git log --all --graph --oneline)"
+alias ls='ls -Alp'
+alias mv='mv -i'	# prevent silent overwriting
+alias cp='cp -i'	# prevent silent overwriting
+alias list='ls | grep -v -e '\''.swp'\'' -e '\''.o'\'' -e '\''.DS_Store'\'' | sort -k1,1r -k9,9'
+alias clang='clang -Wall -Wextra -Werror'
+alias compile='clang -S -g'
+alias today='echo 20$(date '\''+%y%m%d'\'')'
+alias cdgitroot='cd $(git rev-parse --show-toplevel)'
+alias norminetter='norminette -R CheckForbiddenSourceHeader'
+alias gitlog='git log --all --graph --max-count=42 --oneline'
+alias gitlogall='git log --all --graph --oneline'
+# alias gitlog='git log --all --graph --oneline'
+# alias vimgitlog='vim <(git log --all --graph --oneline)'
 
 
 
 ## script aliases
 
-alias zshrc="source $HOME/.zshrc"
-alias setenv="source $env/setenv.sh"
-alias aux="zsh $aux/foundation/aux.sh"
-alias vim="aux _vim"
+alias zshrc='source $HOME/.zshrc'
+alias setenv='source $env/setenv.sh'
+alias aux='zsh $aux/foundation/aux.sh'
+alias vim='aux _vim'
 
 
 
 ## vim aliases
 
-alias vimzshrc="vim $data/.zshrc"
-alias vimvimrc="vim $data/.vimrc"
-alias vimsetenv="vim $env/setenv.sh"
-alias vimgitignore="vim $env/.data/.gitignore"
+alias vimzshrc='vim $data/.zshrc'
+alias vimvimrc='vim $data/.vimrc'
+alias vimsetenv='vim $env/setenv.sh'
+alias vimgitignore='vim $env/.data/.gitignore'
