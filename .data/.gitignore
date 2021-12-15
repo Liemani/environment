@@ -24,6 +24,7 @@
 *.[ao]
 *.out
 *.swp
+*.swo
 
 # exclude specific files
 .DS_Store
