@@ -138,3 +138,4 @@ vnoremap ? : norm 3x<CR>
 let @g='ggw'
 let @q='zf%]]'
 let @w=':13,$foldo!'
+let @e='"*y'
