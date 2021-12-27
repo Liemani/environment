@@ -135,7 +135,7 @@ vnoremap / : norm i//	<CR>
 vnoremap ? : norm 3x<CR>
 "------------------------------------------------------------
 " Macros
-let @g='ggw'
-let @q='zf%]]'
-let @w=':13,$foldo!'
+let @g='ggw'	" jump to top and to next window
+let @q='zf%]]'	" fold from cursor to match pair and jump to next function open in c
+let @w=':13,$foldo!'	" fold 42header
 let @e='"*y'
