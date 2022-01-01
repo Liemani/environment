@@ -28,16 +28,17 @@ PROMPT='%F{240}%T %F{208}%~ $vcs_info_msg_0_%F{111}%#%f '
 # automation
 ## simple aliases
 
-alias ls='ls -Alp'
+alias ls='ls -Ap1'
 alias mv='mv -i'	# prevent silent overwriting
 alias cp='cp -i'	# prevent silent overwriting
-alias list='ls | grep -v -e '\''\.o'\'' -e '\''\.swp'\'' -e '\''\.swo'\'' -e '\''\.DS_Store'\'' | sort -k1,1r -k9,9'
+alias list='ls -Alp | grep -v -e '\''\.o'\'' -e '\''\.swp'\'' -e '\''\.swo'\'' -e '\''\.DS_Store'\'' | sort -k1,1r -k9,9'
 alias clang='clang -Wall -Wextra -Werror'
 alias today='echo 20$(date '\''+%y%m%d'\'')'
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
 alias norminetter='norminette -R CheckForbiddenSourceHeader'
 alias gitlog='git log --all --graph --max-count=42 --oneline'
 alias gitlogall='git log --all --graph --oneline'
+alias pour='aux pour'
 # alias gitlog='git log --all --graph --oneline'
 # alias vimgitlog='vim <(git log --all --graph --oneline)'
 
