@@ -126,8 +126,8 @@ nnoremap GT gT
 nnoremap GG G
 
 " Make possible two button input the same time
-inoremap fj <esc>
-inoremap jf <esc>
+" inoremap fj <esc>
+" inoremap jf <esc>
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
