@@ -98,13 +98,17 @@ let g:netrw_liststyle = 3    " tree style
 "------------------------------------------------------------
 " Key Mappings
 
+cnoremap <C-B> <Left>
+cnoremap <C-F> <Right>
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
-cnoremap <C-F> <Right>
-cnoremap <C-B> <Left>
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
 cnoremap <C-D> <DEL>
+
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
+inoremap <C-D> <DEL>
 
 " nnoremap <F1> :Stdheader<CR>  " Automatically mapped by '~/.vim/plugin/stdheader.vim'
 nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
@@ -122,7 +126,7 @@ nnoremap <F12> :source ~/.vimrc<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
 
 " disable shift-k
-map <S-k> <Nop>
+nnoremap <S-k> <Nop>
 
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
