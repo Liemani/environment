@@ -126,7 +126,8 @@ nnoremap <F12> :source ~/.vimrc<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
 
 " disable shift-k
-nnoremap <S-k> <Nop>
+nnoremap <S-K> <Nop>
+vnoremap <S-K> <Nop>
 
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
