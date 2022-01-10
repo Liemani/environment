@@ -21,14 +21,13 @@
 ##
 
 # exclude specific extension
-*.[ao]
-*.out
 *.swp
 *.swo
+*.[ao]
+*.out
 
 # exclude specific files
 .DS_Store
 tags
-
-# exclude project target name
-minishell
+.tmp
+.temp

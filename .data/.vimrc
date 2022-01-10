@@ -104,11 +104,11 @@ cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 cnoremap <C-D> <DEL>
 
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
-inoremap <C-A> <Home>
-inoremap <C-E> <End>
-inoremap <C-D> <DEL>
+" inoremap <C-B> <Left>
+" inoremap <C-F> <Right>
+" inoremap <C-A> <Home>
+" inoremap <C-E> <End>
+" inoremap <C-D> <DEL>
 
 " nnoremap <F1> :Stdheader<CR>  " Automatically mapped by '~/.vim/plugin/stdheader.vim'
 nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
@@ -149,6 +149,6 @@ vnoremap ? : norm 3x<CR>
 "------------------------------------------------------------
 " Macros
 let @g='ggw'	" jump to top and to next window
-let @q='zf%]]'	" fold from cursor to match pair and jump to next function open in c
+let @q='v][zf}'	" fold from cursor to match pair and jump to next function open in c
 let @w=':13,$foldo!'	" fold 42header
 let @e='"*y'
