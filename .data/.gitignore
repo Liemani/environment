@@ -1,33 +1,32 @@
-# reference:
-# https://git-scm.com/docs/gitignore
+# reference: https://git-scm.com/docs/gitignore
 
-##
-# old setting
-# exclude all files
-# *
-#
-# include all directories
-# !*/
-#
-# include specific extension files
-# !*.h
-# !*.c
-# !*.sh
-# !*.txt
-#
-# include specific files
-# !.vimsession/*
-# !Makefile
-##
+# exclude all files or directories
+*
+# include all directories: It is not possible to re-include a file if a parent directory of that file is excluded.
+!*/
+# include all files with dot on it's basename
+!*.*
+# exclude all hidden files or directories
+.*
+# include all hidden directories
+!.*/
 
-# exclude specific extension
-*.swp
-*.swo
-*.[ao]
+# - result:
+#	- All directories are included.
+#	- All files without dot on it's basename are excluded.
+#	- All files with dot on it's basename are included.
+#	- But all hidden files are excluded.
+
+# exclude specific files with dot on it's basename
+*.sw[po]
+*.[oa]
 *.out
 
-# exclude specific files
-.DS_Store
-tags
-.tmp
-.temp
+# include specific files without dot on it's basename
+!Makefile
+
+# include specific files hidden
+!.vimsession
+
+# include specific files with path
+!.vimsession/*
