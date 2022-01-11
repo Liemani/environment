@@ -118,12 +118,14 @@ nnoremap <F3> :mksession! $git_root/.vimsession<CR>
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
-nnoremap <F6> <C-W>v:args `find . -iname \*.\[hc\]`<CR>
-nnoremap <F7> /<C-R><C-W><CR>N:vimgrep <C-R><C-W> ##<CR>:copen<CR>
+nnoremap <F6> :args **/*.[ch] **/*.[ch]pp<CR>
+nnoremap <F7> :vimgrep <C-R>/ ##<CR>:copen<CR>
 nnoremap <F11> :set nomodifiable<CR>:set nowrite<CR>
 nnoremap <F11><F11> :set modifiable<CR>:set write<CR>
 nnoremap <F12> :source ~/.vimrc<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
+" nnoremap <F6> :args `find . -iname \*.\[hc\] -o -iname \*.\[hc\]pp`<CR>
+" nnoremap <F7> /<C-R><C-W><CR>N:vimgrep <C-R><C-W> ##<CR>:copen<CR>
 
 " disable shift-k
 nnoremap <S-K> <Nop>
