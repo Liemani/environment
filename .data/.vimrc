@@ -59,6 +59,7 @@ set autoindent
 set cindent " == set cin
 
 " smartindent is more versatile for use with other programming languages
+set ignorecase	" make auto completion search including uppercase even you typed only lowercase
 set smartcase
 set smarttab
 set smartindent " == set si
