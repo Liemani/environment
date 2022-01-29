@@ -147,11 +147,11 @@ nnoremap GG G
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
-vnoremap / : norm i//	<CR>
+vnoremap / : norm i// <CR>
 vnoremap ? : norm 3x<CR>
 "------------------------------------------------------------
 " Macros
 let @g='ggw'	" jump to top and to next window
-let @q='v][zf}'	" fold from cursor to match pair and jump to next function open in c
+let @q='va{zf}'	" fold from cursor to match pair and jump to next function open in c
 let @w=':13,$foldo!'	" fold 42header
 let @e='"*y'

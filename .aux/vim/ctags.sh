@@ -7,7 +7,7 @@ if [[ $# -eq 1 ]]; then
 elif [[ $# -eq 2 ]]; then
 	tags_dir=$(pwd)/$2
 else
-	echo 'usafe: aux ctags <directory to configure> <directory for tags>'
+	echo 'usage: aux ctags <directory to configure> <directory for tags>'
 	exit 0
 fi
 
