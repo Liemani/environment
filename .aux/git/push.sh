@@ -1,10 +1,12 @@
-#!/bin/zsh
+#!/bin/bash
+
+if [[ $# -ge 2 ]]; then
+	echo 'usage: aux push [<message>]'
+	exit 1
+fi
 
 if [[ $# -eq 0 ]]; then
-	1=backup
-elif [[ $# -ge 2 ]]; then
-	echo 'usage: push <message>'
-	exit 1
+	1="backup"
 fi
 
 echo
@@ -13,6 +15,5 @@ echo
 echo path: \$git${$(pwd)#"$git"}
 
 git add --all \
-	&& git commit -m "$@"
-echo $@
+	&& git commit -m "$1"
 git push

@@ -9,7 +9,7 @@
 #	fi
 
 if [[ $# -ge 2 ]]; then
-	echo 'usage: aux backup [<message>]'
+	echo 'usage: aux backcommit [<message>]'
 	exit 1
 fi
 
@@ -20,5 +20,5 @@ fi
 repositories=($(find $git -depth 1 -type d))
 for repository in $repositories; do
 	cd $repository
-	aux push "$1"
+	aux commit "$1"
 done
