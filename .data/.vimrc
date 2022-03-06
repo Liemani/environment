@@ -62,7 +62,9 @@ set cindent " == set cin
 set ignorecase	" make auto completion search including uppercase even you typed only lowercase
 set smartcase
 set smarttab
-set smartindent " == set si
+" set smartindent " == set si
+	" txt 파일에서 ^#을 indent하지 못하게 하는 오류
+	" cindent도 마찬가지 오류가 있다.
 
 " Tab
 set tabstop=4    " tab size to be displayed
