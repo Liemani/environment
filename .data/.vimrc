@@ -89,6 +89,10 @@ set hlsearch
 
 " Functional
 set autowrite " Is this work??
+
+" Split
+set splitright
+set splitbelow
 "------------------------------------------------------------
 " netrw variables
 
