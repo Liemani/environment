@@ -2,6 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
+cnoremap <C-D> <Del>
+cnoremap <C-E> <End>
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
 map! <D-v> *
 vnoremap / : norm i//	
 vnoremap ? : norm 3x
@@ -10,13 +15,15 @@ nnoremap GT gT
 map K <Nop>
 vmap gx <Plug>NetrwBrowseXVis
 nmap gx <Plug>NetrwBrowseX
-nnoremap <F10> :set modifiable:set write
-vmap <F1> :Stdheader
+nnoremap <F12><F12> :set modifiable:set write
 omap <F1> :Stdheader
+vmap <F1> :Stdheader
+nnoremap <F10> :set modifiable:set write
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
-nnoremap <F12><F12> :set modifiable:set write
 nnoremap <F12> :set nomodifiable:set nowrite
+nnoremap <F11><F11> :set modifiable:set write
+nnoremap <F11> :set nomodifiable:set nowrite
 nnoremap <F7> /:vimgrep  ##:copen
 nnoremap <F6> v:args `find . -iname \*.\[hc\]`
 nnoremap <F5> :e
@@ -31,6 +38,11 @@ vmap <D-x> "*d
 vmap <D-c> "*y
 vmap <D-v> "-d"*P
 nmap <D-v> "*P
+cnoremap  <Home>
+cnoremap  <Left>
+cnoremap  <Del>
+cnoremap  <End>
+cnoremap  <Right>
 inoremap fj 
 inoremap jf 
 let &cpo=s:cpo_save
@@ -67,14 +79,14 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/git/env
+cd ~/git/env/.aux/etc
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-$argadd setenv.sh
+$argadd ~/git/env/setenv.sh
 set stal=2
 tabnew
 tabnew
@@ -82,8 +94,9 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
-edit README.md
+edit ~/git/env/README.md
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -207,7 +220,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -231,9 +244,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 107 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 107 + 161) / 322)
-exe 'vert 3resize ' . ((&columns * 106 + 161) / 322)
+exe 'vert 1resize ' . ((&columns * 120 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 121 + 181) / 362)
+exe 'vert 3resize ' . ((&columns * 119 + 181) / 362)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -349,7 +362,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 55) / 110)
+let s:l = 2 - ((1 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -472,7 +485,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -596,7 +609,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -604,9 +617,9 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe 'vert 1resize ' . ((&columns * 107 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 107 + 161) / 322)
-exe 'vert 3resize ' . ((&columns * 106 + 161) / 322)
+exe 'vert 1resize ' . ((&columns * 120 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 121 + 181) / 362)
+exe 'vert 3resize ' . ((&columns * 119 + 181) / 362)
 tabnext
 edit ~/git/env/.data/.zshrc
 set splitbelow splitright
@@ -627,10 +640,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 80 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 81 + 161) / 322)
-exe 'vert 3resize ' . ((&columns * 78 + 161) / 322)
-exe 'vert 4resize ' . ((&columns * 80 + 161) / 322)
+exe 'vert 1resize ' . ((&columns * 90 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 91 + 181) / 362)
+exe 'vert 3resize ' . ((&columns * 88 + 181) / 362)
+exe 'vert 4resize ' . ((&columns * 90 + 181) / 362)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -746,7 +759,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 5 - ((0 * winheight(0) + 55) / 110)
+let s:l = 5 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -882,7 +895,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 133 - ((104 * winheight(0) + 55) / 110)
+let s:l = 133 - ((90 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1006,7 +1019,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 55) / 110)
+let s:l = 3 - ((2 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1130,7 +1143,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 55) / 110)
+let s:l = 6 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1138,17 +1151,24 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 80 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 81 + 161) / 322)
-exe 'vert 3resize ' . ((&columns * 78 + 161) / 322)
-exe 'vert 4resize ' . ((&columns * 80 + 161) / 322)
+exe 'vert 1resize ' . ((&columns * 90 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 91 + 181) / 362)
+exe 'vert 3resize ' . ((&columns * 88 + 181) / 362)
+exe 'vert 4resize ' . ((&columns * 90 + 181) / 362)
 tabnext
-edit ~/git/env/.tool/template.c
+edit ~/git/env/.tool/template.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -1157,133 +1177,15 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 160 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 161 + 161) / 322)
+exe '1resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 1resize ' . ((&columns * 180 + 181) / 362)
+exe '2resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 2resize ' . ((&columns * 180 + 181) / 362)
+exe '3resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 3resize ' . ((&columns * 181 + 181) / 362)
+exe '4resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 4resize ' . ((&columns * 181 + 181) / 362)
 argglobal
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal cindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'c'
-setlocal filetype=c
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=ccomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal smartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'c'
-setlocal syntax=c
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/git/env
-wincmd w
-argglobal
-if bufexists("~/git/env/.tool/template.h") | buffer ~/git/env/.tool/template.h | else | edit ~/git/env/.tool/template.h | endif
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -1398,7 +1300,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1406,8 +1308,386 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe 'vert 1resize ' . ((&columns * 160 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 161 + 161) / 322)
+argglobal
+if bufexists("~/git/env/.tool/template.c") | buffer ~/git/env/.tool/template.c | else | edit ~/git/env/.tool/template.c | endif
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'c'
+setlocal filetype=c
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=ccomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'c'
+setlocal syntax=c
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 3 - ((2 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+3
+normal! 0
+lcd ~/git/env
+wincmd w
+argglobal
+if bufexists("~/git/env/.tool/template.hpp") | buffer ~/git/env/.tool/template.hpp | else | edit ~/git/env/.tool/template.hpp | endif
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'cpp'
+setlocal filetype=cpp
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=ccomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'cpp'
+setlocal syntax=cpp
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 0
+lcd ~/git/env
+wincmd w
+argglobal
+if bufexists("~/git/env/.tool/template.cpp") | buffer ~/git/env/.tool/template.cpp | else | edit ~/git/env/.tool/template.cpp | endif
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'cpp'
+setlocal filetype=cpp
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=ccomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'cpp'
+setlocal syntax=cpp
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 15 - ((14 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+15
+normal! 0
+lcd ~/git/env
+wincmd w
+exe '1resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 1resize ' . ((&columns * 180 + 181) / 362)
+exe '2resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 2resize ' . ((&columns * 180 + 181) / 362)
+exe '3resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 3resize ' . ((&columns * 181 + 181) / 362)
+exe '4resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 4resize ' . ((&columns * 181 + 181) / 362)
 tabnext
 edit ~/git/env/.aux/foundation/aux.sh
 set splitbelow splitright
@@ -1428,10 +1708,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 81 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 80 + 161) / 322)
-exe 'vert 3resize ' . ((&columns * 78 + 161) / 322)
-exe 'vert 4resize ' . ((&columns * 80 + 161) / 322)
+exe 'vert 1resize ' . ((&columns * 91 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 90 + 181) / 362)
+exe 'vert 3resize ' . ((&columns * 88 + 181) / 362)
+exe 'vert 4resize ' . ((&columns * 90 + 181) / 362)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -1547,7 +1827,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1671,7 +1951,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1795,7 +2075,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1919,7 +2199,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 55) / 110)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1927,10 +2207,10 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe 'vert 1resize ' . ((&columns * 81 + 161) / 322)
-exe 'vert 2resize ' . ((&columns * 80 + 161) / 322)
-exe 'vert 3resize ' . ((&columns * 78 + 161) / 322)
-exe 'vert 4resize ' . ((&columns * 80 + 161) / 322)
+exe 'vert 1resize ' . ((&columns * 91 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 90 + 181) / 362)
+exe 'vert 3resize ' . ((&columns * 88 + 181) / 362)
+exe 'vert 4resize ' . ((&columns * 90 + 181) / 362)
 tabnext
 edit ~/git/env/.aux/git/pull.sh
 set splitbelow splitright
@@ -1969,24 +2249,24 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 55 + 56) / 113)
-exe 'vert 1resize ' . ((&columns * 107 + 161) / 322)
-exe '2resize ' . ((&lines * 54 + 56) / 113)
-exe 'vert 2resize ' . ((&columns * 107 + 161) / 322)
-exe '3resize ' . ((&lines * 36 + 56) / 113)
-exe 'vert 3resize ' . ((&columns * 107 + 161) / 322)
-exe '4resize ' . ((&lines * 36 + 56) / 113)
-exe 'vert 4resize ' . ((&columns * 107 + 161) / 322)
-exe '5resize ' . ((&lines * 36 + 56) / 113)
-exe 'vert 5resize ' . ((&columns * 107 + 161) / 322)
-exe '6resize ' . ((&lines * 27 + 56) / 113)
-exe 'vert 6resize ' . ((&columns * 106 + 161) / 322)
-exe '7resize ' . ((&lines * 27 + 56) / 113)
-exe 'vert 7resize ' . ((&columns * 106 + 161) / 322)
-exe '8resize ' . ((&lines * 27 + 56) / 113)
-exe 'vert 8resize ' . ((&columns * 106 + 161) / 322)
-exe '9resize ' . ((&lines * 26 + 56) / 113)
-exe 'vert 9resize ' . ((&columns * 106 + 161) / 322)
+exe '1resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 1resize ' . ((&columns * 120 + 181) / 362)
+exe '2resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 2resize ' . ((&columns * 120 + 181) / 362)
+exe '3resize ' . ((&lines * 31 + 49) / 98)
+exe 'vert 3resize ' . ((&columns * 121 + 181) / 362)
+exe '4resize ' . ((&lines * 31 + 49) / 98)
+exe 'vert 4resize ' . ((&columns * 121 + 181) / 362)
+exe '5resize ' . ((&lines * 31 + 49) / 98)
+exe 'vert 5resize ' . ((&columns * 121 + 181) / 362)
+exe '6resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 6resize ' . ((&columns * 119 + 181) / 362)
+exe '7resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 7resize ' . ((&columns * 119 + 181) / 362)
+exe '8resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 8resize ' . ((&columns * 119 + 181) / 362)
+exe '9resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 9resize ' . ((&columns * 119 + 181) / 362)
 argglobal
 setlocal autoindent
 setlocal backupcopy=
@@ -2102,12 +2382,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 3 - ((2 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+3
+normal! 02|
 lcd ~/git/env
 wincmd w
 argglobal
@@ -2226,7 +2506,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2350,7 +2630,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 18) / 36)
+let s:l = 2 - ((1 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2474,7 +2754,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2598,7 +2878,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2722,7 +3002,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2846,7 +3126,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2970,7 +3250,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -3094,7 +3374,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 13) / 26)
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -3102,24 +3382,24 @@ normal! zt
 normal! 0
 lcd ~/git/env
 wincmd w
-exe '1resize ' . ((&lines * 55 + 56) / 113)
-exe 'vert 1resize ' . ((&columns * 107 + 161) / 322)
-exe '2resize ' . ((&lines * 54 + 56) / 113)
-exe 'vert 2resize ' . ((&columns * 107 + 161) / 322)
-exe '3resize ' . ((&lines * 36 + 56) / 113)
-exe 'vert 3resize ' . ((&columns * 107 + 161) / 322)
-exe '4resize ' . ((&lines * 36 + 56) / 113)
-exe 'vert 4resize ' . ((&columns * 107 + 161) / 322)
-exe '5resize ' . ((&lines * 36 + 56) / 113)
-exe 'vert 5resize ' . ((&columns * 107 + 161) / 322)
-exe '6resize ' . ((&lines * 27 + 56) / 113)
-exe 'vert 6resize ' . ((&columns * 106 + 161) / 322)
-exe '7resize ' . ((&lines * 27 + 56) / 113)
-exe 'vert 7resize ' . ((&columns * 106 + 161) / 322)
-exe '8resize ' . ((&lines * 27 + 56) / 113)
-exe 'vert 8resize ' . ((&columns * 106 + 161) / 322)
-exe '9resize ' . ((&lines * 26 + 56) / 113)
-exe 'vert 9resize ' . ((&columns * 106 + 161) / 322)
+exe '1resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 1resize ' . ((&columns * 120 + 181) / 362)
+exe '2resize ' . ((&lines * 47 + 49) / 98)
+exe 'vert 2resize ' . ((&columns * 120 + 181) / 362)
+exe '3resize ' . ((&lines * 31 + 49) / 98)
+exe 'vert 3resize ' . ((&columns * 121 + 181) / 362)
+exe '4resize ' . ((&lines * 31 + 49) / 98)
+exe 'vert 4resize ' . ((&columns * 121 + 181) / 362)
+exe '5resize ' . ((&lines * 31 + 49) / 98)
+exe 'vert 5resize ' . ((&columns * 121 + 181) / 362)
+exe '6resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 6resize ' . ((&columns * 119 + 181) / 362)
+exe '7resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 7resize ' . ((&columns * 119 + 181) / 362)
+exe '8resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 8resize ' . ((&columns * 119 + 181) / 362)
+exe '9resize ' . ((&lines * 23 + 49) / 98)
+exe 'vert 9resize ' . ((&columns * 119 + 181) / 362)
 tabnext
 edit ~/git/env/.aux/vim/vimsession.sh
 set splitbelow splitright
@@ -3245,19 +3525,285 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 30 - ((29 * winheight(0) + 55) / 110)
+let s:l = 30 - ((25 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 30
 normal! 042|
 lcd ~/git/env
-tabnext 3
+tabnext
+edit ~/git/env/.aux/etc/generate_c_structure.sh
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 181 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 180 + 181) / 362)
+argglobal
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'sh'
+setlocal filetype=sh
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetShIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sh'
+setlocal syntax=sh
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 21 - ((20 * winheight(0) + 47) / 95)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+21
+normal! 058|
+lcd ~/git/env/.aux/etc
+wincmd w
+argglobal
+if bufexists("~/git/env/.aux/etc/generateCppClass.sh") | buffer ~/git/env/.aux/etc/generateCppClass.sh | else | edit ~/git/env/.aux/etc/generateCppClass.sh | endif
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'sh'
+setlocal filetype=sh
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetShIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sh'
+setlocal syntax=sh
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 20 - ((19 * winheight(0) + 47) / 95)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+20
+normal! 056|
+lcd ~/git/env/.aux/etc
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 181 + 181) / 362)
+exe 'vert 2resize ' . ((&columns * 180 + 181) / 362)
+tabnext 8
 set stal=1
 badd +1 ~/git/env/README.md
 badd +1 ~/git/env/setenv.sh
 badd +1 ~/git/env/.data/.zshrc
-badd +1 ~/git/env/.tool/template.c
+badd +2 ~/git/env/.tool/template.c
 badd +1 ~/git/env/.aux/foundation/aux.sh
 badd +2 ~/git/env/.aux/git/pull.sh
 badd +1 ~/git/env/.aux/vim/vimsession.sh
@@ -3280,6 +3826,10 @@ badd +1 ~/git/env/.aux/git/push.sh
 badd +1 ~/git/env/.aux/git/backup.sh
 badd +1 ~/git/env/.data/vimsession
 badd +1 ~/git/env
+badd +0 ~/git/env/.tool/template.hpp
+badd +0 ~/git/env/.tool/template.cpp
+badd +0 ~/git/env/.aux/etc/generate_c_structure.sh
+badd +0 ~/git/env/.aux/etc/generateCppClass.sh
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
