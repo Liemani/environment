@@ -21,17 +21,22 @@ fi
 
 
 
-# 2021-09-15
-vimsession=$git/$1/.vimsession
-if [[ -f $vimsession ]]; then
-	cd $vimsession
-	vim -S $vimsession
+repositoryDir=$git/$1
+
+if [[ -f $repositoryDir/.vimsession ]]; then
+	cd $repositoryDir
+	vim -S .vimsession
 else
-	vimsession=$git/.private/.vimsession/$1
-	if [[ -f $vimsession ]]; then
-		cd $vimsession
-		vim -S $vimsession
+	vimsessionDir=$git/.private/.vimsession
+
+	if [[ -f $vimsessionDir/$1 ]]; then
+		cd $vimsessionDir
+		vim -S $1
+	else
+		echo "$0: [$vimsessionDir/$1] is not a file!"
 	fi
+
+	unset vimsessionDir
 fi
 
-unset vimsession
+unset repositoryDir
