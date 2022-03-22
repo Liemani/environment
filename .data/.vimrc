@@ -138,6 +138,9 @@ nnoremap <F12> :source ~/.vimrc<CR>
 nnoremap <S-K> <Nop>
 vnoremap <S-K> <Nop>
 
+" disable U
+nnoremap U <Nop>
+
 " nnoremap <C-H> <C-W><C-H>
 " nnoremap <C-J> <C-W><C-J>
 " nnoremap <C-K> <C-W><C-K>
