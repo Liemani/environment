@@ -8,8 +8,8 @@ private:
 public:
 	\(class name)(void);
 	\(class name)(const \(class name)& \(instance name));
-	~\(class name)(void);
 	\(class name)& operator=(const \(class name)& rhs);
+	~\(class name)(void);
 };
 
 #endif
