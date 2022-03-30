@@ -36,9 +36,6 @@ alias gitlog='git log --all --graph --max-count=42 --oneline'
 alias gitlogall='git log --all --graph --oneline'
 alias pour='aux pour'
 alias record='aux record'
-alias self='basename $(pwd)'
-# alias gitlog='git log --all --graph --oneline'
-# alias vimgitlog='vim <(git log --all --graph --oneline)'
 
 ## script aliases
 alias zshrc='source $HOME/.zshrc'
@@ -52,3 +49,8 @@ alias vimvimrc='vim $data/.vimrc'
 alias vimsetenv='vim $env/setenv.sh'
 alias vimgitignore='vim $env/.data/.gitignore'
 alias vimrecord='vim $git/.private/record.txt'
+
+# out-dated
+# alias self='basename $(git rev-parse --show-toplevel)'
+# alias gitlog='git log --all --graph --oneline'
+# alias vimgitlog='vim <(git log --all --graph --oneline)'
