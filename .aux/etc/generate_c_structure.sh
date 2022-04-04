@@ -2,7 +2,7 @@
 
 if [[ $# -eq 1 ]]; then
 	2=$(pwd)
-elif [[ $# -eq 2 && ! -d $2 ]]; then
+elif [[ $# -eq 2 ]]; then
 	if [[ $2[1] != "/" ]]; then
 	else
 		2=$(pwd)/$2
