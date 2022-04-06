@@ -3,7 +3,9 @@
 #ifndef \(uppercase name)_HPP
 #define \(uppercase name)_HPP
 
-class \(class name): \(base class name) {
+#include "\(base class name).hpp"
+
+class \(class name): public \(base class name) {
 private:
 protected:
 	\(class name)& initUnique(/* argument list */);
