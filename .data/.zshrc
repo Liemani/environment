@@ -36,6 +36,7 @@ alias gitlog='git log --all --graph --max-count=42 --oneline'
 alias gitlogall='git log --all --graph --oneline'
 alias pour='aux pour'
 alias record='aux record'
+alias vs='aux vimsession'
 
 ## script aliases
 alias zshrc='source $HOME/.zshrc'
