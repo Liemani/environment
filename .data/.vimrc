@@ -83,6 +83,13 @@ color desert
 " 	syntax on
 " endif
 
+set listchars=eol:$,space:_,tab:\|.,trail:_
+" "eol", "extends", "precedes"
+highlight NonText ctermfg=235
+" "nbsp", "space", "tab", "trail"
+highlight SpecialKey ctermfg=235
+" verbose highlight <highlight group>
+
 " set cursorline
 
 set hlsearch
@@ -127,6 +134,7 @@ nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> :args **/*.[ch] **/*.[ch]pp<CR>
 nnoremap <F7> :vimgrep <C-R>/ ##<CR>:copen<CR>
+nnoremap <F10> :set list!<CR>
 nnoremap <F11> :set nomodifiable<CR>:set nowrite<CR>
 nnoremap <F11><F11> :set modifiable<CR>:set write<CR>
 nnoremap <F12> :source ~/.vimrc<CR>
