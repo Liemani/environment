@@ -69,6 +69,7 @@ set smarttab
 " Tab
 set tabstop=4    " tab size to be displayed
 set shiftwidth=4
+set expandtab
 
 " set statusline
 set laststatus=2
@@ -134,9 +135,9 @@ nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
 nnoremap <F6> :args **/*.[ch] **/*.[ch]pp<CR>
 nnoremap <F7> :vimgrep <C-R>/ ##<CR>:copen<CR>
-nnoremap <F10> :set list!<CR>
-nnoremap <F11> :set nomodifiable<CR>:set nowrite<CR>
-nnoremap <F11><F11> :set modifiable<CR>:set write<CR>
+nnoremap <F9> :set list!<CR>
+nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
+nnoremap <F10><F10> :set modifiable<CR>:set write<CR>
 nnoremap <F12> :source ~/.vimrc<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
 " nnoremap <F6> :args `find . -iname \*.\[hc\] -o -iname \*.\[hc\]pp`<CR>
