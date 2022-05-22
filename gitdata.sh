@@ -15,4 +15,4 @@ repositories=(
 # This variable is used for git clone
 
 git_user_id=Liemani
-git_user_email=parkjh2768@naver.com
+git_user_email=parkjh2768@gmail.com
