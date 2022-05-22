@@ -150,10 +150,10 @@ vnoremap <S-K> <Nop>
 " disable U
 nnoremap U <Nop>
 
-" nnoremap <C-H> <C-W><C-H>
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J><C-W>_
+nnoremap <C-K> <C-W><C-K><C-W>_
+nnoremap <C-L> <C-W><C-L>
 
 " Tab move
 nnoremap GT gT
