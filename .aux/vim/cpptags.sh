@@ -2,7 +2,9 @@
 
 
 
-if [[ $# -ne 1 ]]; then
+if [[ $# -eq 0 ]]; then
+    1='.'
+elif [[ $# -ne 1 ]]; then
 	echo 'usage: aux cpptags <directory to analyze>'
 	exit 0
 fi
