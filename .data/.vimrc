@@ -133,11 +133,11 @@ nnoremap <F3> :mksession! $git_root/.vimsession<CR>
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
-nnoremap <F6> 0f(byiwbb/<C-R>"<CR>
-nnoremap <F6><F6> yiwbb/<C-R>"<CR>
+nnoremap <F6> 0f(byiwbb/\<<C-R>"\><CR>
+nnoremap <F6><F6> yiwbb/\<<C-R>"\><CR>
 nnoremap <F7> :args **/*.[ch]<CR>
 nnoremap <F7><F7> :args **/*.[ch]pp<CR>
-nnoremap <F8> :vimgrep <C-R>/ ##<CR>:copen<CR>
+nnoremap <F8> :vimgrep /<C-R>// ##<CR>:copen<CR>
 nnoremap <F9> :set list!<CR>
 nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
 nnoremap <F10><F10> :set modifiable<CR>:set write<CR>
