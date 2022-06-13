@@ -4,6 +4,8 @@
 *
 # include all directories: It is not possible to re-include a file if a parent directory of that file is excluded.
 !*/
+# exclude specific directories with dot on it's basename
+*.dYSM/
 # include all files with dot on it's basename
 !*.*
 # exclude all hidden files or directories
@@ -13,6 +15,7 @@
 
 # - result:
 #	- All directories are included.
+#       - exclude specific directories with dot on it's basename.
 #	- All files without dot on it's basename are excluded.
 #	- All files with dot on it's basename are included.
 #	- But all hidden files are excluded.
