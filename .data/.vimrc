@@ -133,8 +133,8 @@ nnoremap <F3> :mksession! $git_root/.vimsession<CR>
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR><C-W>h
 nnoremap <F5> :e<CR>
-nnoremap <F6> 0f(byiwbb/\<<C-R>"\><CR>
-nnoremap <F6><F6> yiwbb/\<<C-R>"\><CR>
+nnoremap <F6> yiwbb/\<<C-R>"\><CR>
+nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
 nnoremap <F7> :args **/*.[ch]<CR>
 nnoremap <F7><F7> :args **/*.[ch]pp<CR>
 nnoremap <F8> :vimgrep /<C-R>// ##<CR>:copen<CR>
@@ -168,8 +168,8 @@ nnoremap GG G
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
-vnoremap / : norm i// <CR>
-vnoremap ? : norm 3x<CR>
+vnoremap / : norm 0R//<CR>
+vnoremap ? : norm 0R  <CR>
 "------------------------------------------------------------
 " Macros
 let @g='ggw'	" jump to top and to next window
