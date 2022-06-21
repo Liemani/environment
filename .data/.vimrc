@@ -137,7 +137,7 @@ nnoremap <F6> yiwbb/\<<C-R>"\><CR>
 nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
 nnoremap <F7> :args **/*.[ch]<CR>
 nnoremap <F7><F7> :args **/*.[ch]pp<CR>
-nnoremap <F8> :vimgrep /<C-R>// ##<CR>:copen<CR>
+nnoremap <F8> :vimgrep // ##<CR>:copen<CR>
 nnoremap <F9> :set list!<CR>
 nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
 nnoremap <F10><F10> :set modifiable<CR>:set write<CR>
@@ -168,11 +168,11 @@ nnoremap GG G
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
-vnoremap / : norm 0R//<CR>
-vnoremap ? : norm 0R  <CR>
+vnoremap / :norm I//  <CR>
+vnoremap ? :norm 04x<CR>
 "------------------------------------------------------------
 " Macros
-let @g='ggw'	" jump to top and to next window
-let @q='][va{zf}'	" fold from cursor to match pair and jump to next function open in c
-let @w=':13,$foldo!'	" fold 42header
+let @g='ggw'  " jump to top and to next window
+let @q='][va{zf}'   " fold from cursor to match pair and jump to next function open in c
+let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
