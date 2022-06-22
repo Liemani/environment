@@ -131,7 +131,8 @@ nnoremap <F1><F1> gg<S-V>}zf
 nnoremap <F2> :Explore<CR>
 nnoremap <F3> :mksession! $git_root/.vimsession<CR>
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
-nnoremap <F4> :q<CR><C-W>h
+nnoremap <F4> :q<CR>
+nnoremap <F4><F4> <C-W>:qa!<CR>
 nnoremap <F5> :e<CR>
 nnoremap <F6> yiwbb/\<<C-R>"\><CR>
 nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
