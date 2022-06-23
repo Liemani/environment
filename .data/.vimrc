@@ -169,7 +169,7 @@ nnoremap GG G
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
-vnoremap / :norm I//  <CR>
+vnoremap / :norm i//  <CR>
 vnoremap ? :norm 04x<CR>
 "------------------------------------------------------------
 " Macros
