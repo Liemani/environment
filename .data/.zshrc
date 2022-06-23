@@ -27,7 +27,7 @@ alias mv='mv -i'	# prevent silent overwriting
 alias cp='cp -i'	# prevent silent overwriting
 alias list='ls -l | grep -v -e '\''\.o'\'' -e '\''\.swp'\'' -e '\''\.swo'\'' -e '\''\.DS_Store'\'' | sort -k1,1r -k9,9'
 alias clang='clang -Wall -Wextra -Werror'
-alias clang++='clang++ -std=c++98 -Wall -Wextra -Werror'
+alias clang++='clang++ -std=c++98 -Wall -Wextra -Werror -I $git/cpp-library -L $git/cpp-library -l cpp-library'
 alias today='echo 20$(date '\''+%y%m%d'\'')'
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
 alias cdtoday='cd $local/.temp && mkdir $(today); cd $(today)'
