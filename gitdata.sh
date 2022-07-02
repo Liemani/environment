@@ -7,7 +7,7 @@ repositories=(
 	env
 	note
 	playground
-	seoul42_project
+	seoul42-project
 	.private)
 
 
