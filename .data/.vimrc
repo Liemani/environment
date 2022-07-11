@@ -175,6 +175,7 @@ vnoremap ? :norm 04x<CR>
 "------------------------------------------------------------
 " Macros
 let @g='ggw'  " jump to top and to next window
-let @q='][va{zf}'   " fold from cursor to match pair and jump to next function open in c
+" let @q='][va{zf}'   " fold from cursor to match pair and jump to next function open in c
+let @q=':let @t=''/''/{zf%/t'
 let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
