@@ -13,7 +13,7 @@
 # include all hidden directories
 !.*/
 
-# - result:
+# - state at this point:
 #	- All directories are included.
 #       - exclude specific directories with dot on it's basename.
 #	- All files without dot on it's basename are excluded.
@@ -29,7 +29,7 @@
 !Makefile
 
 # include specific files hidden
-!.vimsession
+# !.vimsession
 
 # include specific files with path
 !.vimsession/*
