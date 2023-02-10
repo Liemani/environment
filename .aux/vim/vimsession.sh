@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-if [[ ($# -ne 0 && $# -ne 1) ]]; then
+if [[ ! ( $# -eq 0 || $# -eq 1 ) ]]; then
 	echo 'usage: aux vimsession [<repository name>]'
 	exit 1
 fi
@@ -22,7 +22,8 @@ fi
 
 
 if [[ $# -eq 0 ]]; then
-	repositoryDir=$git/$(basename $(git rev-parse --show-toplevel))
+#	repositoryDir=$git/$(basename $(git rev-parse --show-toplevel))
+	repositoryDir=.
 elif [[ $# -eq 1 ]]; then
 	repositoryDir=$git/$1
 fi

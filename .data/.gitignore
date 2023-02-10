@@ -24,6 +24,9 @@
 *.sw[po]
 *.[oa]
 *.out
+*.class
+*.jar
+*.log
 
 # include specific files without dot on it's basename
 !Makefile

@@ -126,8 +126,9 @@ cnoremap <C-D> <DEL>
 " inoremap <C-D> <DEL>
 
 " nnoremap <F1> :Stdheader<CR>  " Automatically mapped by '~/.vim/plugin/stdheader.vim'
-nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
-nnoremap <F1><F1> gg<S-V>}zf
+" nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
+" nnoremap <F1><F1> gg<S-V>}zf
+nnoremap <F1> "tyiwbb/\C\<<C-R>t\><CR>
 nnoremap <F2> :Explore<CR>
 nnoremap <F2><F2> :e %:r.hpp<CR>
 nnoremap <F3> :mksession! $git_root/.vimsession<CR>
@@ -135,14 +136,19 @@ nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
 nnoremap <F4> :q<CR>
 nnoremap <F4><F4> <C-W>:qa!<CR>
 nnoremap <F5> :e<CR>
-nnoremap <F6> yiwbb/\<<C-R>"\><CR>
-nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
+" nnoremap <F6> yiwbb/\<<C-R>"\><CR>
+" nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
 nnoremap <F7> :args **/*.[ch]<CR>
 nnoremap <F7><F7> :args **/*.[ch]pp<CR>
-nnoremap <F8> :vimgrep // ##<CR>:copen<CR>
-nnoremap <F9> :set list!<CR>
-nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
-nnoremap <F10><F10> :set modifiable<CR>:set write<CR>
+nnoremap <F7><F7><F7> :args **/*.java<CR>
+" nnoremap <F9> :set list!<CR>
+nnoremap <F9> :let @t=""<CR> :g///y T<CR>
+vnoremap <F9> <ESC>:let @t=""<CR> :'<,'>g///y T<CR>
+nnoremap <F10> :vimgrep // ##<CR>
+nnoremap <F10><F10> :argdo %s///0/gc<CR>
+nnoremap <F10><F10><F10> :argdo %s///0/g<CR>
+" nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
+" nnoremap <F10><F10> :set modifiable<CR>:set write<CR>
 nnoremap <F12> :source ~/.vimrc<CR>
 " nnoremap <F6> ye:vimgrep <C-R>" ##<CR>:copen<CR>
 " nnoremap <F6> :args `find . -iname \*.\[hc\] -o -iname \*.\[hc\]pp`<CR>
@@ -155,10 +161,10 @@ vnoremap <S-K> <Nop>
 " disable U
 nnoremap U <Nop>
 
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-H> <C-W><C-H><C-W>\|
 nnoremap <C-J> <C-W><C-J><C-W>_
 nnoremap <C-K> <C-W><C-K><C-W>_
-nnoremap <C-L> <C-W><C-L>
+nnoremap <C-L> <C-W><C-L><C-W>\|
 
 " Tab move
 nnoremap GT gT
@@ -176,6 +182,7 @@ vnoremap ? :norm 04x<CR>
 " Macros
 let @g='ggw'  " jump to top and to next window
 " let @q='][va{zf}'   " fold from cursor to match pair and jump to next function open in c
-let @q=':let @t=''/''/{zf%/t'
+" let @q=':let @t=''/''/(v%f{%zf/tj'
+let @q=':let @t=''/''/{zf%/tj'
 let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
