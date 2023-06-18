@@ -91,7 +91,7 @@ highlight NonText ctermfg=235
 highlight SpecialKey ctermfg=235
 " verbose highlight <highlight group>
 
-" set cursorline
+set cursorline
 
 set hlsearch
 
