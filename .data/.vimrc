@@ -129,7 +129,7 @@ cnoremap <C-D> <DEL>
 " nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
 " nnoremap <F1><F1> gg<S-V>}zf
 nnoremap <F1> "tyiwbb/\C\<<C-R>t\><CR>
-nnoremap <F2> :Explore<CR>
+nnoremap <F2> :Explore .<CR>
 nnoremap <F2><F2> :e %:r.hpp<CR>
 nnoremap <F3> :mksession! $git_root/.vimsession<CR>
 nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
@@ -138,13 +138,14 @@ nnoremap <F4><F4> <C-W>:qa!<CR>
 nnoremap <F5> :e<CR>
 " nnoremap <F6> yiwbb/\<<C-R>"\><CR>
 " nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
-nnoremap <F7> :args **/*.[ch]<CR>
-nnoremap <F7><F7> :args **/*.[ch]pp<CR>
-nnoremap <F7><F7><F7> :args **/*.java<CR>
+"" target files to arg list
+nnoremap <F7> :args **/*.
 " nnoremap <F9> :set list!<CR>
 nnoremap <F9> :let @t=""<CR> :g///y T<CR>
 vnoremap <F9> <ESC>:let @t=""<CR> :'<,'>g///y T<CR>
+"" search "/ all arg list
 nnoremap <F10> :vimgrep // ##<CR>
+"" replace all "/ to "0
 nnoremap <F10><F10> :argdo %s///0/gc<CR>
 nnoremap <F10><F10><F10> :argdo %s///0/g<CR>
 " nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
