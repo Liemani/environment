@@ -61,5 +61,8 @@ xcuserdata/
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode
 
+!**/*.xcdatamodel/*
+
 # 2023-06-18
 # If i include a directory, git include the files exist in the directory directly
+#   That is not true "!**/*.xcdatamodel"

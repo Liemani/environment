@@ -1,7 +1,6 @@
 #!/bin/zsh
 
-cd $aux
-list=$(find . -iname "*.sh")
+list=$(find $aux -iname "*.sh")
 if [[ $# -eq 0 ]]; then
 	echo $list | xargs basename | sed "s/\.sh$//" | sort
 elif [[ $# -eq 1 && $1 == "-l" ]]; then

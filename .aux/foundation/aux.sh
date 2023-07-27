@@ -16,23 +16,20 @@ if  [[ $# -eq 0 ]]; then
 	exit 0
 elif [[ $1 == "aux" ]]; then
 	>&2 echo \'aux aux\' is forbidden!!
-	exit 1
+	return 1
 fi
 
 
 
-# variable
-find="$(dirname $0)/find.sh"
-alias aux="source $aux/foundation/aux.sh"
-alias vim="aux _vim"
+aux_find="$(dirname $0)/find.sh"
+source $aux_find $1
 
-
-
-source $find $1 $aux
 if [[ $? -eq 1 ]]; then
 	>&2 echo "aux.sh: There is no aux command of name [$1]"
 	return 1
 fi
 
 shift
-source $aux_command $@
+source $aux_return $@
+
+unset aux_return

@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 if [[ $# -eq 0 ]]; then
-	echo 'usafe: aux diff <files>'
+	echo 'usage: aux diff <files>'
+    exit 1
 fi
 
 for name in $@; do

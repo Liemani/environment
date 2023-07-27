@@ -91,7 +91,7 @@ highlight NonText ctermfg=235
 highlight SpecialKey ctermfg=235
 " verbose highlight <highlight group>
 
-set cursorline
+" set cursorline
 
 set hlsearch
 
@@ -142,11 +142,11 @@ nnoremap <F5> :e<CR>
 nnoremap <F7> :args **/*.
 " nnoremap <F9> :set list!<CR>
 nnoremap <F9> :let @t=""<CR> :g///y T<CR>
-vnoremap <F9> <ESC>:let @t=""<CR> :'<,'>g///y T<CR>
+vnoremap <F9><F9> <ESC>:let @t=""<CR> :'<,'>g///y T<CR>
 "" search "/ all arg list
 nnoremap <F10> :vimgrep // ##<CR>
 "" replace all "/ to "0
-nnoremap <F10><F10> :argdo %s///0/gc<CR>
+nnoremap <F10><F10> :argdo %s///0/ceg<CR>
 nnoremap <F10><F10><F10> :argdo %s///0/g<CR>
 " nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
 " nnoremap <F10><F10> :set modifiable<CR>:set write<CR>

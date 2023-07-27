@@ -42,7 +42,7 @@ alias gitd='git status && gitlog'
 ## script aliases
 alias zshrc='source $HOME/.zshrc'
 alias setenv='source $env/setenv.sh'
-alias aux='zsh $aux/foundation/aux.sh'
+alias aux='source $aux/foundation/aux.sh'
 alias vim='aux _vim'
 
 ## vim aliases

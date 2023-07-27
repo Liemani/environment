@@ -2,19 +2,24 @@
 
 if [[ $# -eq 0 ]]; then
 	echo 'usage: aux vim <aux_commands>'
-	exit 1
+	return 1
 fi
 
 
 
-declare -a file_array
+declare -a aux_file_array
+
 for file in $@; do
-	source $find $file $aux
+	source $aux_find $file
 
 	if [[ $? -eq 0 ]]; then
-		file_array+=$aux_command
+		aux_file_array+=$aux_return
 	else
-		file_array+=$aux/$file.sh
+		aux_file_array+=$aux/$file.sh
 	fi
 done
-vim $file_array
+
+vim $aux_file_array
+
+unset aux_return
+unset aux_file_array
