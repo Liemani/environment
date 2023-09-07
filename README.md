@@ -1,3 +1,16 @@
+### change log
+
+#### issue
+make `.core` directory 
+`set_env.sh` simply run shell script in `.core`
+
+#### usage
+
+```
+./set_env.sh
+source source_env.sh
+```
+
 ### prologue
 
 I recommand using this program on new environment not old. And `backup` aux command's uniformed commit message makes hard differentiating your commits. So I recommand to use this program for backup purpose of repository which is don't need to record the change log or version.

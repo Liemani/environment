@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source $(dirname $0)/.data/.zshrc
+source $base_directory/.data/.zshrc
 
 
 

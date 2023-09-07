@@ -1,14 +1,8 @@
-#!/bin/zsh
+#!/bin/sh
 
 # This is git repository name list.
 
-repositories=(
-	Liemani.github.io
-	env
-	note
-	playground
-	seoul42-project
-	.private)
+repositories="env note note_personal playground .private"
 
 
 
