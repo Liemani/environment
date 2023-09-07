@@ -13,13 +13,8 @@ fi
 shell=$(basename $SHELL)
 set_to_shell_script=set_"$shell".sh
 
-if [ -f $set_shell_script ]; then
-	sh set_common.sh
-	sh $set_to_shell_script
-else
-	echo 'Don'\''t support' "[$shell]"
-fi
+sh set_common.sh
 
-## log
-# if [ $shell_name = 'ash' ]; then
-# if [ -z $shell_name ]; then
+if [ -f $set_to_shell_script ]; then
+	sh $set_to_shell_script
+fi

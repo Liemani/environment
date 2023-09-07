@@ -1,0 +1,69 @@
+# reference: https://git-scm.com/docs/gitignore
+
+# exclude all files or directories
+*
+# include all directories: It is not possible to re-include a file if a parent directory of that file is excluded.
+!*/
+# exclude specific directories with dot on it's basename
+*.dYSM/
+# include all files with dot on it's basename
+!*.*
+# exclude all hidden files or directories
+.*
+# include all hidden directories
+!.*/
+
+# - state at this point:
+#	- All directories are included.
+#       - exclude specific directories with dot on it's basename.
+#	- All files without dot on it's basename are excluded.
+#	- All files with dot on it's basename are included.
+#	- But all hidden files are excluded.
+
+# exclude specific files with dot on it's basename
+*.sw[po]
+*.[oa]
+*.out
+*.class
+*.jar
+*.log
+
+# include specific files without dot on it's basename
+!Makefile
+
+# include specific files hidden
+# !.vimsession
+!.gitignore
+
+# include specific files with path
+!.vimsession/*
+
+
+
+# Created by https://www.toptal.com/developers/gitignore/api/xcode
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode
+
+### Xcode ###
+## User settings
+xcuserdata/
+
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.toptal.com/developers/gitignore/api/xcode
+
+!**/*.xcdatamodel/*
+
+# 2023-06-18
+# If i include a directory, git include the files exist in the directory directly
+#   That is not true "!**/*.xcdatamodel"

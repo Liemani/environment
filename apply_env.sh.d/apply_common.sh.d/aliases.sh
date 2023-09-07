@@ -27,7 +27,7 @@ alias vim='aux _vim'
 alias vimshrc='vim $data/.'$SHELL_NAME'rc'
 alias vimvimrc='vim $data/.vimrc'
 alias vimsetenv='vim $env/setenv.sh'
-alias vimgitignore='vim $env/.data/.gitignore'
+alias vimgitignore='vim $rc_files/.gitignore'
 alias vimrecord='vim $git/.private/record.txt'
 
 # out-dated
