@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sh set_common.d/set_common.sh
+sh set_common.sh.d/set_common.sh

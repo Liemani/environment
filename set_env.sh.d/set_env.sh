@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-source ../apply_env.sh.d/path_data.sh
+source ../apply_env.sh.d/apply_common.sh.d/path_data.sh
 
 if [ -d $env ]; then
 	echo '['$env'] directory already exist'
@@ -10,7 +10,7 @@ if [ -d $env ]; then
 	exit 0
 fi
 
-shell=$(basename $SHELL)
+export shell=$(basename $SHELL)
 set_to_shell_script=set_"$shell".sh
 
 sh set_common.sh

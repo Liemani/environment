@@ -4,24 +4,23 @@
 *
 # include all directories: It is not possible to re-include a file if a parent directory of that file is excluded.
 !*/
-# exclude specific directories with dot on it's basename
-*.dYSM/
-# include all files with dot on it's basename
+# include all files or directories with dot on it's basename
 !*.*
+# exclude directories with specific basename
+*.dYSM/
 # exclude all hidden files or directories
-.*
+#.*
 # include all hidden directories
-!.*/
+#!.*/
 
 # - state at this point:
 #	- All directories are included.
-#       - exclude specific directories with dot on it's basename.
-#	- All files without dot on it's basename are excluded.
+#       - Exclude directories with specific basename.
 #	- All files with dot on it's basename are included.
-#	- But all hidden files are excluded.
+#	- All files without dot on it's basename are excluded.
 
 # exclude specific files with dot on it's basename
-*.sw[po]
+.*.sw[pon]
 *.[oa]
 *.out
 *.class
@@ -31,12 +30,12 @@
 # include specific files without dot on it's basename
 !Makefile
 
-# include specific files hidden
+# include specific hidden files
 # !.vimsession
-!.gitignore
+#!.gitignore
 
 # include specific files with path
-!.vimsession/*
+#!/.vimsession/*
 
 
 
