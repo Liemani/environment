@@ -18,17 +18,20 @@ alias vs='aux vimsession'
 alias gitd='git status && gitlog'
 
 ## script aliases
-alias shrc='source $HOME/.'$SHELL_NAME'rc'
+alias a='sh $env/bin/a'
+alias vim='a _vim'
+alias shrc='source $HOME/.$shellrc'
 #alias setenv='source $env/setenv.sh'
-alias aux='source $aux/foundation/aux.sh'
-alias vim='aux _vim'
+#alias aux='source $aux/foundation/aux.sh'
+#alias vim='aux _vim'
 
 ## vim aliases
-alias vimshrc='vim $data/.'$SHELL_NAME'rc'
+alias vimshrc='vim $env/data/.'$shell'rc'
 alias vimvimrc='vim $data/.vimrc'
 alias vimsetenv='vim $env/setenv.sh'
 alias vimgitignore='vim $rc_files/.gitignore'
 alias vimrecord='vim $git/.private/record.txt'
+alias vimalias='vim $env/data/alias.sh'
 
 # out-dated
 # alias self='basename $(git rev-parse --show-toplevel)'

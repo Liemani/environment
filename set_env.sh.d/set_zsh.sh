@@ -4,7 +4,7 @@ source $base_directory/.data/.zshrc
 
 
 
-if [[ ! -e $git ]]; then
+if [[ ! -e $remote ]]; then
 	echo source $data/.zshrc >> $HOME/.zshrc
 	echo source $data/.vimrc >> $HOME/.vimrc
 fi
@@ -12,7 +12,7 @@ fi
 
 
 backbone_path_list=(
-	$git
+	$remote
 	$local
 	)
 
@@ -35,7 +35,7 @@ if [[ ! -d $env ]]; then
 		env_tmp=$(pwd)/$env_tmp
 	fi
 
-	mv $env_tmp $git
+	mv $env_tmp $remote
 
 	unset env_tmp
 fi
@@ -44,7 +44,7 @@ fi
 
 source $env/gitdata.sh
 
-git config --global user.name $git_user_id
+git config --global user.name $git_user_name
 git config --global user.email $git_user_email
 git config --global core.excludesFile $data/.gitignore
 git config --global alias.pull "git pull --rebase"
@@ -56,9 +56,9 @@ else
 fi
 
 for repository in $repositories; do
-	if [[ ! -d $git/$repository ]]; then
+	if [[ ! -d $remote/$repository ]]; then
 		echo path: $repository
-		git clone $git_address$git_user_id/$repository.git $git/$repository
+		git clone $git_address$git_user_name/$repository.git $remote/$repository
 		echo
 	fi
 done

@@ -1,0 +1,1 @@
+source $env/data/.vimrc
