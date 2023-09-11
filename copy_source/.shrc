@@ -1,3 +1,6 @@
+oldpwd=$PWD
+
 cd $HOME/remote/env
 source apply_env.sh
-cd
+
+unset oldpwd

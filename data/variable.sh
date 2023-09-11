@@ -1,0 +1,1 @@
+shell=$(basename $SHELL)
