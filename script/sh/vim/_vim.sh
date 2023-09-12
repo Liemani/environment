@@ -10,9 +10,9 @@ elif [ $1 = '-S' ]; then
     set -- '-S' $(basename $2)
 fi
 
-2>/dev/null export git_root=$(git rev-parse --show-toplevel)
-2>/dev/null export git_repo=$(basename $git_root)
-2>/dev/null export git_branch=$(git rev-parse --abbrev-ref HEAD)
+export git_root=$(2>/dev/null git rev-parse --show-toplevel)
+export git_repo=$(2>/dev/null basename $git_root)
+export git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
 
 command vim $@
 
