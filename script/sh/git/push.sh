@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ $# -ge 2 ]]; then
-	echo 'usage: aux push [<message>]'
-	exit 1
+if [ $# -ge 2 ]; then
+    echo 'usage: push [<commit message>]'
+    return 1
 fi
 
-if [[ $# -eq 0 ]]; then
-	1="backup"
+if [ $# -eq 0 ]; then
+    set -- 'backup'
 fi
 
 echo
 echo
 echo
-echo path: \$git${$(pwd)#"$git"}
+echo 'path: $remote'"${PWD#$remote}"
 
 git add --all \
-	&& git commit -m "$1"
+    && git commit -m "$1"
 git push
