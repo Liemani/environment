@@ -8,8 +8,15 @@ fi
 
 basename=$(basename $1)
 filename=${basename%.*}
+target=../script/sh/$1
 
-ln -s ../script/sh/$1 $env/bin/$filename
+if [ -f $target ]; then
+    ln -s $target $env/bin/$filename
+else
+# fixme: output absolute path
+    echo 'ln: no file ['"$target"']'
+fi
 
 unset basename
 unset filename
+unset target

@@ -1,10 +1,10 @@
-#!/bin/zsh
+#!/bin/sh
 
-if [[ $# -ne 0 ]]; then
-	repositories=($@)
-	repositories=(${repositories/#/$git\/})
+if [ $# -ne 0 ]; then
+    repositories=($@)
+    repositories=(${repositories/#/$git\/})
 else
-	repositories=($(find $git -depth 1 -type d))
+    repositories=($(find $git -depth 1 -type d))
 fi
 
-aux status $repositories
+a status $repositories

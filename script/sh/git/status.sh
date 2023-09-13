@@ -1,13 +1,14 @@
-#!/bin/zsh
+#!/bin/sh
 
-if [[ $# -eq 0 ]]; then
-	git status
-	exit 0
+if [ $# -eq 0 ]; then
+    git status
+else
+    for repository_name in $@; do
+        echo
+        echo
+        echo
+        echo 'path: $remote/'"$repository_name"
+        cd "$remote/$repository_name"
+        git status
+    done
 fi
-
-for local_repo in $@; do
-	echo -n "\n\n\n"
-	echo path: \$git${local_repo#"$git"}
-	cd $local_repo
-	git status
-done
