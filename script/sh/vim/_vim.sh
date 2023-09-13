@@ -5,7 +5,7 @@ oldpwd=$PWD
 if [ $# -eq 1 ]; then
     cd $(dirname $1)
     set -- $(basename $1)
-elif [ $1 = '-S' ]; then
+elif [ "$1" = '-S' ]; then
     cd $(dirname $2)
     set -- '-S' $(basename $2)
 fi
