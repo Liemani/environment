@@ -55,6 +55,9 @@ command `a` run `a_command` in $env/bin
 ## todo
 
 - `a_command`
+  - Adopt
+    - `backcheck`
+    - `backup`
   - Create
     - `mv`
   - Check
