@@ -14,7 +14,7 @@ export git_root=$(2>/dev/null git rev-parse --show-toplevel)
 export git_repo=$(2>/dev/null basename $git_root)
 export git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
 
-command vim $@
+command vim "$@"
 
 cd $oldpwd
 
