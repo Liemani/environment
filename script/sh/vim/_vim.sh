@@ -2,6 +2,8 @@
 
 oldpwd=$PWD
 
+
+
 if [ $# -eq 1 ]; then
     cd $(dirname $1)
     set -- $(basename $1)
@@ -15,6 +17,8 @@ export git_repo=$(2>/dev/null basename $git_root)
 export git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
 
 command vim "$@"
+
+
 
 cd $oldpwd
 
