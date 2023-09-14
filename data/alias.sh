@@ -18,7 +18,7 @@ alias vs='aux vimsession'
 alias gitd='git status && gitlog'
 
 ## script aliases
-alias a='sh $env/bin/a'
+alias a='source $env/bin/a'
 alias vim='a _vim'
 alias shrc='source $HOME/.$shellrc'
 #alias setenv='source $env/setenv.sh'

@@ -1,10 +1,9 @@
 #!/bin/sh
 
 if [ $# -ne 0 ]; then
-    repositories=($@)
-    repositories=(${repositories/#/$git\/})
-else
-    repositories=($(find $git -depth 1 -type d))
+    echo 'usage: backcheck'
+    return 1
 fi
 
-a status $repositories
+cd $remote
+a status "$(ls)"

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+
+
 if [ $1 = 'a' ]; then
     >&2 echo '[a] as a_command is forbidden'
     return 1
@@ -16,7 +18,7 @@ a_command=$env/bin/$1
 if [ -f $a_command ]; then
     shift
     source $a_command "$@"
-    cd $olwdpwd
+    cd $oldpwd
 else
     >&2 echo "a: There is no a_command [$1]"
 fi
