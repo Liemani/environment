@@ -12,7 +12,7 @@ fi
 echo
 echo
 echo
-echo 'path: $remote'"${PWD#$remote}"
+echo 'path: $remote/'"${PWD#$remote}"
 
 git add --all \
     && git commit -m "$1"
