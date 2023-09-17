@@ -177,8 +177,9 @@ nnoremap GG G
 "
 " nnoremap <C-L> :nohl<CR><C-L>
 
-vnoremap / :norm i//  <CR>
-vnoremap ? :norm 04x<CR>
+vnoremap / :norm i//<CR>
+vnoremap # :norm i# <CR>
+vnoremap ? :norm xx<CR>
 "------------------------------------------------------------
 " Macros
 let @g='ggw'  " jump to top and to next window
