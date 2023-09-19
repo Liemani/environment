@@ -16,7 +16,7 @@ else
     unset target_absolute
 fi
 
-basename=$(basename $1)
+basename=$(basename "$1")
 filename=${basename%.*}
 target_relative=../script/sh/$1
 
