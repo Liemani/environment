@@ -21,7 +21,7 @@ if [ "$1" = "$2" ]; then
     return 1
 fi
 
-mv "shellscript/$1" "$shellscript/$2"
+mv "$shellscript/$1" "$shellscript/$2"
 
 source_basename=$(basename $1)
 source_filename=${source_basename%.*}
