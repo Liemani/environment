@@ -2,7 +2,7 @@
 
 
 if [ $# -ne 0 ]; then
-    echo 'usage: backcheck'
+    echo 'usage : gitstatusall'
     return 1
 fi
 
@@ -10,8 +10,8 @@ oldpwd=$PWD
 
 
 
-cd $remote
-a status "$(ls)"
+cd $personal
+a gitstatus "$(ls)"
 
 
 

@@ -8,4 +8,7 @@ export extern=$remote/extern
 
 export env=$extern/env
 
+export bin=$env/bin
+export shellscript=$env/script/sh
+
 export derivedData=$HOME/Library/Developer/Xcode/DerivedData

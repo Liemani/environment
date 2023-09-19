@@ -11,8 +11,8 @@ else
         echo
         echo
         echo
-        echo 'path: $remote/'"$repository_name"
-        cd "$remote/$repository_name"
+        echo 'path : $personal/'"$repository_name"
+        cd "$personal/$repository_name"
         git status
     done
 fi

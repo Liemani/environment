@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# -ge 2 ]; then
-	echo 'usage: commit [<commit message>]'
+	echo 'usage : gitcommit [<commit message>]'
 	return 1
 fi
 
@@ -12,7 +12,7 @@ fi
 echo
 echo
 echo
-echo 'path: $remote/'"${PWD#$remote}"
+echo 'path: $personal/'"${PWD#$personal}"
 
-git add --all \
-	&& git commit -m "$1"
+git add --all &&
+    git commit -m "$1"

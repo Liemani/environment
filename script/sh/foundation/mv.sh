@@ -2,11 +2,11 @@
 
 if [ $# -ne 2 ]; then
     echo 'usage : mv <source> <target>'
-    echo '    source and target are relative path from $env/script/sh'
+    echo '    source and target are relative path from $shellscript'
     return 1
 fi
 
-source_absolute=$env/script/sh/$1
+source_absolute=$shellscript/$1
 
 if [ ! -f "$source_absolute" ]; then
     echo 'a::mv : no file exist ['"$source_absolute"']'
@@ -21,7 +21,7 @@ if [ "$1" = "$2" ]; then
     return 1
 fi
 
-mv "$env/script/sh/$1" "$env/script/sh/$2"
+mv "shellscript/$1" "$shellscript/$2"
 
 source_basename=$(basename $1)
 source_filename=${source_basename%.*}
@@ -29,7 +29,7 @@ source_filename=${source_basename%.*}
 target_basename=$(basename $2)
 target_filename=${target_basename%.*}
 
-rm "$env/bin/$source_filename"
+rm "$bin/$source_filename"
 
 if [ "$source_filename" = "$target_filename" ]; then
     option='-s'
@@ -37,7 +37,7 @@ else
     option='-sf'
 fi
 
-ln "$option" "../script/sh/$2" "$env/bin/$target_filename"
+ln "$option" "../script/sh/$2" "$bin/$target_filename"
 
 unset source_basename
 unset source_filename

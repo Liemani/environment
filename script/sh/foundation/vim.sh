@@ -1,8 +1,8 @@
-#!/bin/zsh
+#!/bin/sh
 
 if [ $# -ne 1 ]; then
-	echo 'usage: vim <a_command>'
-	return 1
+    echo 'usage : vim <a::command>'
+    return 1
 fi
 
-vim "$env/bin/$1"
+vim "$bin/$1"
