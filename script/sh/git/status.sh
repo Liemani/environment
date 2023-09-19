@@ -7,7 +7,7 @@ oldpwd=$PWD
 if [ $# -eq 0 ]; then
     git status
 else
-    for repository_name in $@; do
+    for repository_name in "$@"; do
         echo
         echo
         echo
@@ -17,5 +17,5 @@ else
     done
 fi
 
-cd $oldpwd
+cd "$oldpwd"
 unset oldpwd
