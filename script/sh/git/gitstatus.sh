@@ -1,9 +1,5 @@
 #!/bin/sh
 
-oldpwd=$PWD
-
-
-
 if [ $# -eq 0 ]; then
     git status
 else
@@ -17,5 +13,4 @@ else
     done
 fi
 
-cd "$oldpwd"
-unset oldpwd
+>/dev/null cd -
