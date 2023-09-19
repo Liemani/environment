@@ -14,7 +14,7 @@ a_command="$env/bin/$1"
 
 if [ -f "$a_command" ]; then
     shift
-    source "$a_command" $@
+    source "$a_command" "$@"
 else
     >&2 echo "a: There is no a_command [$1]"
 fi

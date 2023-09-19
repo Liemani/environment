@@ -5,4 +5,4 @@ if [ $# -ne 1 ]; then
 	return 1
 fi
 
-vim $env/bin/$1
+vim "$env/bin/$1"

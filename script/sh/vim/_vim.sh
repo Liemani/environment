@@ -12,7 +12,7 @@ export git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
 
 >/dev/null cd -
 
-command vim $@
+command vim "$@"
 
 
 
