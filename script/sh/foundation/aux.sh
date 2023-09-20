@@ -22,7 +22,7 @@ fi
 
 
 aux_find="$(dirname $0)/find.sh"
-source $aux_find $1
+. $aux_find $1
 
 if [[ $? -eq 1 ]]; then
 	>&2 echo "aux.sh: There is no aux command of name [$1]"
@@ -30,6 +30,6 @@ if [[ $? -eq 1 ]]; then
 fi
 
 shift
-source $aux_return $@
+. $aux_return $@
 
 unset aux_return

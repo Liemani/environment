@@ -11,14 +11,14 @@ alias gitlogall='git log --all --graph --oneline'
 alias gitd='git status && gitlog'
 
 # a::command
-alias a='source $env/bin/a'
+alias a='. $env/bin/a'
 alias dump='a dump'
 alias record='a record'
 alias vim='a _vim'
 # alias vs='a vimsession'
 
 ## script
-alias shrc='source $HOME/.'"$shell"'rc'
+alias shrc='. $HOME/.'"$shell"'rc'
 
 ## vim
 alias vimvimrc='vim $env/data/.vimrc'
@@ -35,6 +35,6 @@ alias vimalias='vim $env/data/alias.sh'
 #alias clang42='clang -Wall -Wextra -Werror'
 #alias clang++42='clang++ -std=c++98 -Wall -Wextra -Werror -I $git/cpp-library -L $git/cpp-library -l cpp-library'
 #alias norminetter='norminette -R CheckForbiddenSourceHeader'
-#alias setenv='source $env/setenv.sh'
-#alias aux='source $aux/foundation/aux.sh'
+#alias setenv='. $env/setenv.sh'
+#alias aux='. $aux/foundation/aux.sh'
 #alias vim='aux _vim'

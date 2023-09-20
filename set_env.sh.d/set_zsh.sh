@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source $base_directory/.data/.zshrc
+. $base_directory/.data/.zshrc
 
 
 
@@ -42,7 +42,7 @@ fi
 
 
 
-source $env/gitdata.sh
+. $env/gitdata.sh
 
 git config --global user.name $git_user_name
 git config --global user.email $git_user_email

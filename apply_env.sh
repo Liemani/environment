@@ -1,9 +1,9 @@
 cd $HOME/remote/extern/env/data
 
-source variable.sh
+. ./variable.sh
 
-source alias.sh
-source path.sh
+. ./alias.sh
+. ./path.sh
 
 cd $env/apply_env.sh.d
-source apply_env.sh
+. ./apply_env.sh

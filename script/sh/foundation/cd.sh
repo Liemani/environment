@@ -7,7 +7,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 
-source $aux_find $1
+. $aux_find $1
 
 cd $(dirname $aux_return)
 

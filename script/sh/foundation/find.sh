@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 if [[ $# -ne 1 ]]; then
-	echo 'usage: source $find <what>'
+	echo 'usage: . $find <what>'
 	echo
 	echo 'This script is composed for in script purpose'
 	return 1

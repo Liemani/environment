@@ -1,6 +1,6 @@
 cd $(dirname "$0")
 
-source ../data/path.sh
+. ../data/path.sh
 
 if [ -d "$env" ]; then
     echo "[$env] directory already exist"
@@ -8,7 +8,7 @@ if [ -d "$env" ]; then
     exit 1
 fi
 
-source ../data/variable.sh
+. ../data/variable.sh
 
 set_to_shell_script=set_$shell.sh
 

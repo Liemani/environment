@@ -1,4 +1,4 @@
-source $env/data/git.sh
+. $env/data/git.sh
 
 git config --global user.name $git_user_name
 git config --global user.email $git_user_email

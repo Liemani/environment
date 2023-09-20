@@ -11,7 +11,7 @@ aux pull $repositories
 
 
 
-source $env/gitdata.sh
+. $env/gitdata.sh
 
 for repository in $repositories; do
 	if [[ ! -d $git/$repository ]]; then

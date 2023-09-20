@@ -15,5 +15,5 @@ if [ ! -d "$extern" ]; then
 fi
 
 if [ ! -d "$env" ]; then
-    mv ../.. "$extern/env"
+    mv ../../../env "$extern/env"
 fi
