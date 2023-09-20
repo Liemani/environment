@@ -12,8 +12,8 @@ source ../data/variable.sh
 
 set_to_shell_script=set_$shell.sh
 
-sh set_common.sh
+"$SHELL" set_common.sh
 
 if [ -f "$set_to_shell_script" ]; then
-    sh "$set_to_shell_script"
+    "$SHELL" "$set_to_shell_script"
 fi

@@ -1,1 +1,1 @@
-export shell=$(basename $SHELL)
+export shell=$(basename "$SHELL")

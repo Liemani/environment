@@ -1,4 +1,3 @@
-
 if [ $# -ne 0 ]; then
     echo 'usage : gitstatusall'
     return 1

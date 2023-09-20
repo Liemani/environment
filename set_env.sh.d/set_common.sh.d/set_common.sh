@@ -1,7 +1,7 @@
 cd $(dirname $0)
 
-sh set_environment.sh
-sh set_git.sh
+"$SHELL" set_environment.sh
+"$SHELL" set_git.sh
 
 shrc=$HOME/.$shell'rc'
 if [ ! -f "$shrc" ]; then
