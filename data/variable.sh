@@ -1,1 +1,3 @@
-shell=$(basename $SHELL)
+#!/bin/sh
+
+export shell=$(basename $SHELL)

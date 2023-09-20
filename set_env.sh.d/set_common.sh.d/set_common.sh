@@ -5,11 +5,12 @@ cd $(dirname $0)
 sh set_environment.sh
 sh set_git.sh
 
-shrc_file=$HOME"/."$shell"rc"
-if [ ! -f $shrc_file ]; then
-	cp $env/copy_source/.shrc $shrc_file
+shrc=$HOME/.$shell'rc'
+if [ ! -f "$shrc" ]; then
+    cp "$env/copy_source/.shrc" "$shrc"
 fi
 
-if [ ! -f ~/.vimrc ]; then
-    cp $env/copy_source/.vimrc $HOME
+vimrc=$HOME/.vimrc
+if [ ! -f "$vimrc" ]; then
+    cp "$env/copy_source/.vimrc" "$vimrc"
 fi

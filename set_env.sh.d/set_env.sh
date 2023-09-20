@@ -1,20 +1,21 @@
 #!/bin/sh
 
-cd $(dirname $0)
+cd $(dirname "$0")
 
-source ../apply_env.sh.d/apply_common.sh.d/path_data.sh
+source ../data/path.sh
 
-if [ -d $env ]; then
-	echo '['$env'] directory already exist'
-	echo 'Terminate set environment process'
-	exit 0
+if [ -d "$env" ]; then
+    echo "[$env] directory already exist"
+    echo 'Terminates set environment process'
+    exit 1
 fi
 
-export shell=$(basename $SHELL)
-set_to_shell_script=set_"$shell".sh
+source ../data/variable.sh
+
+set_to_shell_script=set_$shell.sh
 
 sh set_common.sh
 
-if [ -f $set_to_shell_script ]; then
-	sh $set_to_shell_script
+if [ -f "$set_to_shell_script" ]; then
+    sh "$set_to_shell_script"
 fi

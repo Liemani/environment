@@ -1,21 +1,21 @@
 #!/bin/sh
 
-if [ ! -d $local ]; then
-	mkdir -p $local
+if [ ! -d "$local" ]; then
+    mkdir -p "$local"
 fi
 
-if [ ! -d $remote ]; then
-	mkdir -p $remote
+if [ ! -d "$remote" ]; then
+    mkdir -p "$remote"
 fi
 
-if [ ! -d $personal ]; then
-	mkdir -p $personal
+if [ ! -d "$personal" ]; then
+    mkdir -p "$personal"
 fi
 
-if [ ! -d $extern ]; then
-	mkdir -p $extern
+if [ ! -d "$extern" ]; then
+    mkdir -p "$extern"
 fi
 
-if [ ! -d $env ]; then
-	mv ../.. $extern/env
+if [ ! -d "$env" ]; then
+    mv ../.. "$extern/env"
 fi
