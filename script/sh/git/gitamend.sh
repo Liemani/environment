@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -ge 2 ]; then
     echo 'usage : gitamend [<commit message>]'
     return 1

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # general command
 alias ls='ls -Ap1'
 alias mv='mv -i'	# prevent silent overwriting

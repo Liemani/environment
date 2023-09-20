@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -ge 2 ]; then
 	echo 'usage : gitcommit [<commit message>]'
 	return 1

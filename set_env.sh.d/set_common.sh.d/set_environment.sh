@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ ! -d "$local" ]; then
     mkdir -p "$local"
 fi

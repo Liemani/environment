@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -ne 2 ]; then
     echo 'usage : mv <source> <target>'
     echo '    source and target are relative path from $shellscript'

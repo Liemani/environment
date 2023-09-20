@@ -1,5 +1,3 @@
-#!/bin/sh
-
 cd $(dirname "$0")
 
 source ../data/path.sh

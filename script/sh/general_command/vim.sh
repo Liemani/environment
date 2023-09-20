@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -ne 1 ]; then
     echo 'usage : vim <a::command>'
     return 1

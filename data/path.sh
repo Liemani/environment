@@ -1,5 +1,3 @@
-#!/bin/sh
-
 export remote=$HOME/remote
 export local=$HOME/local
 

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -eq 0 ]; then
     git status
 else

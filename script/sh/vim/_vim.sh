@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ "$1" != '-S' ]; then
     cd "$(dirname "$1")"
 else

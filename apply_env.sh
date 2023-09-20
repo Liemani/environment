@@ -1,5 +1,3 @@
-#!/bin/sh
-
 cd $HOME/remote/extern/env/data
 
 source variable.sh

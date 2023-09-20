@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ "$1" = 'a' ]; then
     >&2 echo 'a::a : [a] as a_command is forbidden'
     return 1

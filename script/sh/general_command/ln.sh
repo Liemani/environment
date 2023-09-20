@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -ne 1 ]; then
     echo 'usage : ln <target>'
     echo '    target is relative path from $shellscript'

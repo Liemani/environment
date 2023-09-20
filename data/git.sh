@@ -1,5 +1,3 @@
-#!/bin/sh
-
 git_user_name=Liemani
 git_user_email=parkjh2768@gmail.com
 

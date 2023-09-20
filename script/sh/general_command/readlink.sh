@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ $# -ne 1 ]; then
     echo 'usage : readlink <a::command>'
     return 1
