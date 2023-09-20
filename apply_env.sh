@@ -1,3 +1,7 @@
+oldpwd=$PWD
+
+
+
 cd $HOME/remote/extern/env/data
 
 . ./variable.sh
@@ -7,3 +11,9 @@ cd $HOME/remote/extern/env/data
 
 cd $env/apply_env.sh.d
 . ./apply_env.sh
+
+
+
+cd $oldpwd
+
+unset oldpwd

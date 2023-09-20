@@ -6,6 +6,8 @@ cd $(dirname $0)
 shrc=$HOME/.$shell'rc'
 if [ ! -f "$shrc" ]; then
     cp "$env/copy_source/.shrc" "$shrc"
+else
+    echo '. $HOME/remote/extern/env/apply_env.sh' >> "$shrc"
 fi
 
 vimrc=$HOME/.vimrc
