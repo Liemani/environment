@@ -9,8 +9,8 @@ cd $HOME/remote/extern/env/data
 . ./alias.sh
 . ./path.sh
 
-cd $env/apply_env.sh.d
-. ./apply_env.sh
+cd $env/activate.sh.d
+. ./activate.sh
 
 
 
