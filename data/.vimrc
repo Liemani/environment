@@ -26,7 +26,7 @@ endif
 " Options
 
 " Will set to interactive for the current session.
-set shellcmdflag=-ic
+" set shellcmdflag=-ic
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start

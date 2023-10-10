@@ -5,10 +5,11 @@ alias cp='cp -i'	# prevent silent overwriting
 alias list='ls -l | grep -v -e '\''\.o'\'' -e '\''\.swp'\'' -e '\''\.swo'\'' -e '\''\.DS_Store'\'' | sort -k1,1r -k9,9'
 alias today='echo 20$(date '\''+%y%m%d'\'')'
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
-alias cdtoday='cd $local/.temp && mkdir $(today); cd $(today)'
+alias cdtoday='cd /tmp && mkdir $(today); cd $(today)'
 alias gitlog='git log --all --graph --max-count=42 --oneline'
 alias gitlogall='git log --all --graph --oneline'
 alias gitd='git status && gitlog'
+alias diff='vimdiff'
 
 # a::command
 alias a='. $env/bin/a'

@@ -4,20 +4,33 @@ if [ $# -ne 2 ]; then
     return 1
 fi
 
+
+
 source_absolute=$shellscript/$1
 
-if [ ! -f "$source_absolute" ]; then
-    echo 'a::mv : no file exist ['"$source_absolute"']'
+if [ ! -e "$source_absolute" ]; then
+    echo 'a_command::mv : no file exist ['"$source_absolute"']'
     unset source_absolute
     return 1
-else
-    unset source_absolute
 fi
 
+unset source_absolute
+
+
+
 if [ "$1" = "$2" ]; then
-    echo 'source and target files are same'
+    echo 'a_command::mv : source and target are same'
     return 1
 fi
+
+
+
+소스와 타겟에 따라 다양한 경우가 존재할 수 있다
+1. 소스가 디렉토리이고 타겟이 디렉토리인 경우
+2. 소스가 디렉토리이고 타겟이 레귤러 파일인 경우
+3. 소스가 레귤러 파일이고 타겟이 디렉토리인 경우
+4. 소스가 레귤러 파일이고 타겟이 레귤러 파일인 경우 
+
 
 mv "$shellscript/$1" "$shellscript/$2"
 
