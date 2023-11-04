@@ -1,7 +1,7 @@
 if [ "$1" != '-S' ]; then
-    cd "$(dirname "$1")"
+  cd "$(dirname "$1")"
 else
-    cd "$(dirname "$2")"
+  cd "$(dirname "$2")"
 fi
 
 export git_root=$(2>/dev/null git rev-parse --show-toplevel)

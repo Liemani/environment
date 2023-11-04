@@ -67,8 +67,8 @@ set smarttab
 	" cindent도 마찬가지 오류가 있다.
 
 " Tab
-set tabstop=4    " tab size to be displayed
-set shiftwidth=4
+set tabstop=2    " tab size to be displayed
+set shiftwidth=2
 set expandtab
 
 " set statusline
@@ -130,9 +130,10 @@ cnoremap <C-D> <DEL>
 " nnoremap <F1><F1> gg<S-V>}zf
 nnoremap <F1> "tyiwbb/\C\<<C-R>t\><CR>
 nnoremap <F2> :Explore .<CR>
-nnoremap <F2><F2> :e %:r.hpp<CR>
+nnoremap <F2><F2> :e %:r.h<CR>
+nnoremap <F2><F2><F2> :e %:r.cpp<CR>
 nnoremap <F3> :mksession! $git_root/.vimsession<CR>
-nnoremap <F3><F3> :mksession! $git/.private/.vimsession/
+nnoremap <F3><F3> :mksession! $personal/.private/.vimsession/
 nnoremap <F4> :q<CR>
 nnoremap <F4><F4> <C-W>:qa!<CR>
 nnoremap <F5> :e<CR>

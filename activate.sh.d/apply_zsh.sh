@@ -20,8 +20,10 @@ lmi_generate_dynamic_prompt() {
     git_repo=$(2>/dev/null basename "$git_root")
     git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
 
-    if [ $git_root ]; then
+    if [ "$git_root" ]; then
         prompt_path=${PWD##$git_root}
+    elif [[ "$PWD" == "$HOME"* ]]; then
+        prompt_path='~'${PWD##$HOME}
     else
         prompt_path=$PWD
     fi
