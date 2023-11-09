@@ -1,0 +1,1 @@
+ls $env/script/sh
