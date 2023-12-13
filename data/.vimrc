@@ -142,6 +142,7 @@ nnoremap <F5> :e<CR>
 "" target files to arg list
 nnoremap <F7> :args **/*.
 " nnoremap <F9> :set list!<CR>
+"" store grep to 't'
 nnoremap <F9> :let @t=""<CR> :g///y T<CR>
 vnoremap <F9><F9> <ESC>:let @t=""<CR> :'<,'>g///y T<CR>
 "" search "/ all arg list
