@@ -43,7 +43,7 @@ set display=truncate
 
 " Show a few lines of context around the cursor.  Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-" set scrolloff=10
+set scrolloff=0
 
 " Do not recognize octal numbers for Ctrl-A and Ctrl-X, most users find it
 " confusing.

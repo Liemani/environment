@@ -1,5 +1,5 @@
 # general command
-alias ls='ls -Ap1'
+alias ls='ls -Ap1 --color'
 alias mv='mv -i'	# prevent silent overwriting
 alias cp='cp -i'	# prevent silent overwriting
 alias list='ls -l | grep -v -e '\''\.swp$'\'' -e '\''^\.DS_Store$'\'' | sort -k1,1r -k9,9'
@@ -17,6 +17,7 @@ alias dump='a dump'
 alias record='a record'
 alias vim='a _vim'
 # alias vs='a vimsession'
+alias ed='ed -p "command > "'
 
 ## script
 alias shrc='. $HOME/.'"$shell"'rc'
@@ -28,6 +29,12 @@ alias vimgitignore='vim $env/data/.gitignore'
 alias vimrecord='vim $personal/.private/record.txt'
 alias vimdump='vim $personal/.private/dump.txt'
 alias vimalias='vim $env/data/alias.sh'
+
+# function
+function cd() {
+  builtin cd $@
+  list
+}
 
 # out-dated
 # alias self='basename $(git rev-parse --show-toplevel)'

@@ -2,18 +2,18 @@ oldpwd=$PWD
 
 
 
-cd $HOME/remote/extern/env/data
+builtin cd $HOME/remote/extern/env/data
 
 . ./variable.sh
 
 . ./alias.sh
 . ./path.sh
 
-cd $env/activate.sh.d
+builtin cd $env/activate.sh.d
 . ./activate.sh
 
 
 
-cd $oldpwd
+builtin cd $oldpwd
 
 unset oldpwd
