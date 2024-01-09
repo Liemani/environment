@@ -1,12 +1,22 @@
 # reference: https://git-scm.com/docs/gitignore
 
+# strategy {
+#   core value : big first, small last
+#   - exclude ASAP
+#   - include ALAP
+#   - handle wild card first
+#   - handle specific last
+# }
+
 # exclude all files or directories
 *
 # include all directories: It is not possible to re-include a file if a parent directory of that file is excluded.
 !*/
-# include all files or directories with dot on it's basename
+# exclude specific directories without dots on it's base name
+node_modules/
+# include all files or directories with dot on it's base name
 !*.*
-# exclude directories with specific basename
+# exclude directories with specific base name
 *.dYSM/
 # exclude all hidden files or directories
 #.*
@@ -15,11 +25,11 @@
 
 # - state at this point:
 #	- All directories are included.
-#       - Exclude directories with specific basename.
-#	- All files with dot on it's basename are included.
-#	- All files without dot on it's basename are excluded.
+#       - Exclude directories with specific base name.
+#	- All files with dot on it's base name are included.
+#	- All files without dot on it's base name are excluded.
 
-# exclude specific files with dot on it's basename
+# exclude specific files with dot on it's base name
 .*.sw[pon]
 *.[oa]
 *.out
@@ -27,7 +37,10 @@
 *.jar
 *.log
 
-# include specific files without dot on it's basename
+# exclude specific base name of file
+package-lock.json
+
+# include specific files without dot on it's base name
 !Makefile
 
 # include specific hidden files
