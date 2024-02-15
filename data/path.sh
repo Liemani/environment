@@ -3,6 +3,7 @@ export local=$HOME/local
 
 export personal=$remote/personal
 export extern=$remote/extern
+export work=$remote/work
 
 export env=$extern/env
 

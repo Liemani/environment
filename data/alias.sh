@@ -1,11 +1,12 @@
 # general command
-alias ls='ls -Ap1 --color'
+# alias ls='ls -Ap1 --color'
+alias ls='ls -Ap1'
 alias mv='mv -i'	# prevent silent overwriting
 alias cp='cp -i'	# prevent silent overwriting
 alias list='ls -l | grep -v -e '\''\.swp$'\'' -e '\''^\.DS_Store$'\'' | sort -k1,1r -k9,9'
 alias today='echo 20$(date '\''+%y%m%d'\'')'
 alias cdreporoot='cd $(git rev-parse --show-toplevel)'
-alias cdtoday='cd /tmp && mkdir $(today); cd $(today)'
+alias cdtemp='builtin cd /tmp && mkdir $(today); cd $(today)'
 alias gitlog='git log --all --graph --max-count=42 --oneline'
 alias gitlogall='git log --all --graph --oneline'
 alias gitd='git status && gitlog'
@@ -29,6 +30,7 @@ alias vimgitignore='vim $env/data/.gitignore'
 alias vimrecord='vim $personal/.private/record.txt'
 alias vimdump='vim $personal/.private/dump.txt'
 alias vimalias='vim $env/data/alias.sh'
+alias vimpath='vim $env/data/path.sh'
 
 # function
 function cd() {

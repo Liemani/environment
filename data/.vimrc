@@ -190,4 +190,4 @@ let @g='ggw'  " jump to top and to next window
 let @q=':let @t=''/''/{zf%/tj'
 let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
-let @d=':r !date "+\%y-\%m-\%d"I200'
+let @d=':r !date "+[20\%y-\%m-\%d]"'
