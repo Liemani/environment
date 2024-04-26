@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-$@ | wc -l
+cat $@ | wc -l

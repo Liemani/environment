@@ -1,7 +1,7 @@
 # mark current directory for jump
 
 if [ $# -lt 1 ]; then
-    mark='.temp'
+    mark='temp'
 elif [ $# -lt 2 ]; then
     mark=$1
 else

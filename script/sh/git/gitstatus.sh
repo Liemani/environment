@@ -6,7 +6,7 @@ else
         echo
         echo
         echo 'path : $personal/'"$repository_name"
-        cd "$personal/$repository_name"
+        builtin cd "$personal/$repository_name"
         git status
     done
 fi

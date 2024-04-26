@@ -129,7 +129,7 @@ cnoremap <C-D> <DEL>
 " nnoremap <F1> :Stdheader<CR>gg<S-V>}zf
 " nnoremap <F1><F1> gg<S-V>}zf
 nnoremap <F1> "tyiwbb/\C\<<C-R>t\><CR>
-nnoremap <F2> :Explore .<CR>
+nnoremap <F2> :Explore<CR>
 nnoremap <F2><F2> :e %:r.h<CR>
 nnoremap <F2><F2><F2> :e %:r.cpp<CR>
 nnoremap <F3> :mksession! $repo_root/.vimsession<CR>
@@ -137,19 +137,19 @@ nnoremap <F3><F3> :mksession! $personal/.private/.vimsession/
 nnoremap <F4> :q<CR>
 nnoremap <F4><F4> <C-W>:qa!<CR>
 nnoremap <F5> :e<CR>
+nnoremap <F6> :args **/*.
+nnoremap <F7> :vimgrep // ##<CR>
+nnoremap <F8> :argdo %s///0/g<CR>
 " nnoremap <F6> yiwbb/\<<C-R>"\><CR>
 " nnoremap <F6><F6> 0f(byiwbb/\<<C-R>"\><CR>
 "" target files to arg list
-nnoremap <F7> :args **/*.
 " nnoremap <F9> :set list!<CR>
 "" store grep to 't'
 nnoremap <F9> :let @t=""<CR> :g///y T<CR>
 vnoremap <F9><F9> <ESC>:let @t=""<CR> :'<,'>g///y T<CR>
 "" search "/ all arg list
-nnoremap <F10> :vimgrep // ##<CR>
 "" replace all "/ to "0
-nnoremap <F10><F10> :argdo %s///0/ceg<CR>
-nnoremap <F10><F10><F10> :argdo %s///0/g<CR>
+nnoremap <F10> :argdo %s///0/ceg<CR>
 " nnoremap <F10> :set nomodifiable<CR>:set nowrite<CR>
 " nnoremap <F10><F10> :set modifiable<CR>:set write<CR>
 nnoremap <F12> :source ~/.vimrc<CR>
@@ -187,7 +187,8 @@ vnoremap ? :norm xx<CR>
 let @g='ggw'  " jump to top and to next window
 " let @q='][va{zf}'   " fold from cursor to match pair and jump to next function open in c
 " let @q=':let @t=''/''/(v%f{%zf/tj'
-let @q=':let @t=''/''/{zf%/tj'
+let @q=':let @t=''/''/{zf%/tj'
 let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
-let @d=':r !date "+[20\%y-\%m-\%d]"'
+" Without last space in the string ending with ^M, ^J is followed to register 'd' 
+let @d=':r !date "+[20\%y-\%m-\%d]" '
