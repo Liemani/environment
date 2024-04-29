@@ -32,6 +32,9 @@ alias vimdump='vim $personal/.private/dump.txt'
 alias vimalias='vim $env/data/alias.sh'
 alias vimpath='vim $env/data/path.sh'
 
+## show
+alias gitshowurl='git config --get remote.origin.url'
+
 # function
 function cd() {
   builtin cd $@
@@ -42,9 +45,9 @@ function cd() {
 # alias self='basename $(git rev-parse --show-toplevel)'
 # alias gitlog='git log --all --graph --oneline'
 # alias vimgitlog='vim <(git log --all --graph --oneline)'
-#alias clang42='clang -Wall -Wextra -Werror'
-#alias clang++42='clang++ -std=c++98 -Wall -Wextra -Werror -I $git/cpp-library -L $git/cpp-library -l cpp-library'
-#alias norminetter='norminette -R CheckForbiddenSourceHeader'
-#alias setenv='. $env/setenv.sh'
-#alias aux='. $aux/foundation/aux.sh'
-#alias vim='aux _vim'
+# alias clang42='clang -Wall -Wextra -Werror'
+# alias clang++42='clang++ -std=c++98 -Wall -Wextra -Werror -I $git/cpp-library -L $git/cpp-library -l cpp-library'
+# alias norminetter='norminette -R CheckForbiddenSourceHeader'
+# alias setenv='. $env/setenv.sh'
+# alias aux='. $aux/foundation/aux.sh'
+# alias vim='aux _vim'
