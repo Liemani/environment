@@ -191,4 +191,4 @@ let @q=':let @t=''/''/{zf%/tj'
 let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
 " Without last space in the string ending with ^M, ^J is followed to register 'd' 
-let @d=':r !date "+[20\%y-\%m-\%d]" '
+let @d=':r !date "+20\%y-\%m-\%d" '
