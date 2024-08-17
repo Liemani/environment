@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 ## prompt start
 # autoload -Uz vcs_info
 # precmd_vcs_info() { vcs_info }

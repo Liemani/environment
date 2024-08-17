@@ -8,7 +8,3 @@ if [ $git_repo ]; then
 #     echo -e " \e[37m(\e[92m$git_repo\e[37m/\e[92m$git_branch\e[37m)"
     echo -e " ($git_repo/$git_branch)"
 fi
-
-unset git_root
-unset git_repo
-unset git_branch

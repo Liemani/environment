@@ -13,7 +13,7 @@ alias gitd='git status && gitlog'
 alias diff='vimdiff'
 
 # a::command
-alias a='. $env/bin/a'
+alias a='. $environment/bin/a'
 alias dump='a dump'
 alias record='a record'
 alias vim='a _vim'
@@ -24,16 +24,12 @@ alias ed='ed -p "command > "'
 alias shrc='. $HOME/.'"$shell"'rc'
 
 ## vim
-alias vimvimrc='vim $env/data/.vimrc'
-alias vimsetenv='vim $env/setenv.sh'
-alias vimgitignore='vim $env/data/.gitignore'
-alias vimrecord='vim $private/record.txt'
-alias vimdump='vim $private/dump.txt'
-alias vimalias='vim $env/data/alias.sh'
-alias vimpath='vim $env/data/path.sh'
-
-## show
-alias gitshowurl='git config --get remote.origin.url'
+alias vimvimrc='vim $environment/data/.vimrc'
+alias vimsetenvironment='vim $environment/setEnvironment.sh'
+alias vimgitignore='vim $environment/data/.gitignore'
+alias vimrecord='vim $personal/.private/record.txt'
+alias vimdump='vim $personal/.private/dump.txt'
+alias vimalias='vim $environment/data/alias.sh'
 
 # function
 function cd() {

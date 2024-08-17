@@ -1,7 +1,8 @@
-apply_sh_script="apply_$shell.sh"
+. $environment/data/variable.sh
+. $environment/data/alias.sh
+
+apply_sh_script=$environment/activate.sh.d/apply_$shell.sh
 
 if [ -f "$apply_sh_script" ]; then
-    . "./$apply_sh_script"
+  . $apply_sh_script
 fi
-
-unset apply_sh_script
