@@ -5,6 +5,8 @@ fi
 
 
 
+echo 'Watching' $1
+
 while [[ $? == 0 ]]; do
   sleep 1
   ps $1 >> /dev/null
@@ -12,4 +14,4 @@ done
 
 shift
 
-sh notification.sh "$*"
+a notification "$*"
