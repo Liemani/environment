@@ -3,6 +3,7 @@ export local=$HOME/local
 export remote=$HOME/remote
   export personal=$remote/personal
     export private=$personal/.private
+      export address=$private/data/address.sh
     export library_cpp=$personal/library_cpp
     export playground=$personal/playground
   export extern=$remote/extern
