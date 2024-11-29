@@ -17,6 +17,11 @@ cd $HOME
 git clone https://github.com/Liemani/environment.git
 ```
 
+1. set ENVHOME
+```
+ENVHOME=/new/environment/home/path
+```
+
 2. edit data directory for you
 
 - $HOME/environment/data/
@@ -30,7 +35,7 @@ git clone https://github.com/Liemani/environment.git
 4. source shell rc file
 
 ```
-source $HOME/.bashrc
+source $ENVHOME/.bashrc
 ```
 
 ### Usage of `a`
@@ -83,3 +88,7 @@ command `a` run `a_command` in $env/bin
   - You have to `mkdir <repository>/.vimsession` before this to work
   - And you can load that session easily by `a vimsession <vim session name>`
     - Test `a vimsession env` which I saved! :D
+
+## memo
+`./file` could run another version of shell rather than current shell
+  so i will use `$SHELL file` to run a shell script

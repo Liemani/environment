@@ -170,8 +170,8 @@ nnoremap <C-K> <C-W><C-K><C-W>_
 nnoremap <C-L> <C-W><C-L><C-W>\|
 
 " Tab move
-nnoremap GT gT
-nnoremap GG G
+" nnoremap GT gT
+" nnoremap GG G
 
 " Make possible two button input the same time
 " inoremap fj <esc>
@@ -190,5 +190,5 @@ let @g='ggw'  " jump to top and to next window
 let @q=':let @t=''/''/{zf%/tj'
 let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
-" Without last space in the string ending with ^M, ^J is followed to register 'd' 
-let @d=':r !date "+20\%y-\%m-\%d" '
+" Without last space in the string ending with ^M, ^J is followed to register 'd'
+let @d=':r !date "+\%F \%a" '

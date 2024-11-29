@@ -1,3 +1,3 @@
-. $HOME/remote/extern/environment/data/path.sh
+. $(dirname "$(realpath "${(%):-%x}")")/data/path.sh
 
 . $environment/activate.sh.d/activate.sh
