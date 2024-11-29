@@ -1,5 +1,3 @@
-# README.md is under construction
-
 ### prologue
 
 I recommand using this program on new environment not old. And `backup` aux command's uniformed commit message makes hard differentiating your commits. So I recommand to use this program for backup purpose of repository which is don't need to record the change log or version.
@@ -10,27 +8,33 @@ I recommand using this program on new environment not old. And `backup` aux comm
 
 ### How to use
 
-1. clone this repository and run setup.sh
+1. cd to `ENVHOME` where you want to be environment home
 
 ```
-cd $HOME
-git clone https://github.com/Liemani/environment.git
+ENVHOME=environment/home/path
+cd $ENVHOME
 ```
 
-2. edit data directory for you
-
-- $HOME/environment/data/
-
-3. run setup script
+2. clone this repository
 
 ```
-./environment/setup.sh
+git clone https://github.com/Liemani/.environment.git
 ```
 
-4. source shell rc file
+3. edit `data` directory for you
+
+- $ENVHOME/.environment/data/
+
+4. run setup script with $SHELL command
 
 ```
-source $HOME/.bashrc
+$SHELL .environment/setup.sh
+```
+
+5. source shell rc file
+
+```
+source $ENVHOME/activate.sh
 ```
 
 ### Usage of `a`
@@ -83,3 +87,7 @@ command `a` run `a_command` in $env/bin
   - You have to `mkdir <repository>/.vimsession` before this to work
   - And you can load that session easily by `a vimsession <vim session name>`
     - Test `a vimsession env` which I saved! :D
+
+## memo
+`./file` could run another version of shell rather than current shell
+  so i will use `$SHELL file` to run a shell script

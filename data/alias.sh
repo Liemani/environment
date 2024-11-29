@@ -2,7 +2,7 @@
 # alias ls='ls -Ap1 --color'
 alias ls='ls -Ap1'
 alias mv='mv -i'	# prevent silent overwriting
-alias cp='cp -i'	# prevent silent overwriting
+alias cp='cp -Rip'	# prevent silent overwriting
 alias list='ls -l | grep -v -e '\''\.swp$'\'' -e '\''^\.DS_Store$'\'' | sort -k1,1r -k9,9'
 alias today='echo 20$(date '\''+%y%m%d'\'')'
 alias cdreporoot='cd $(git rev-parse --show-toplevel)'

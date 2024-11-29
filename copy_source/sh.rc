@@ -1,0 +1,7 @@
+# activate environment
+activate=$environment/activate.sh
+if [ -e "$activate" ]; then
+  . $activate
+else
+  . ~/.environment/activate.sh
+fi

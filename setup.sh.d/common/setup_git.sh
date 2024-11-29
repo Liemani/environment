@@ -1,5 +1,3 @@
-#!/bin/bash
-
 . $environment/data/git.sh
 
 git config --global user.name $git_user_name
