@@ -25,7 +25,9 @@ lmi_generate_dynamic_prompt() {
     if [ "$git_root" ]; then
         prompt_path=${PWD##$git_root}
     elif [[ "$PWD" == "$ENVHOME"* ]]; then
-        prompt_path='~'${PWD##$ENVHOME}
+        prompt_path='ENV~'${PWD##$ENVHOME}
+    elif [[ "$PWD" == "$HOME"* ]]; then
+        prompt_path='~'${PWD##$HOME}
     else
         prompt_path=$PWD
     fi
