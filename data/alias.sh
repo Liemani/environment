@@ -12,6 +12,7 @@ alias gitlogall='git log --all --graph --oneline'
 alias gitd='git status && gitlog'
 alias diff='vimdiff'
 alias disklist='diskutil list'
+alias catleases='cat /private/var/db/dhcpd_leases'
 
 # a::command
 alias a='. $environment/bin/a'

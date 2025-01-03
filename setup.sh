@@ -1,3 +1,8 @@
-. $(dirname $0)/data/path.sh
+# usage : $SHELL setup.sh
+basedir=`dirname $0`
 
-$SHELL ./$(dirname $0)/setup.sh.d/setup.sh
+. $basedir/data/path.sh
+
+# run script with matching shell
+# observation : mac run bash when run script with "sh" command but $SHELL has zsh
+$SHELL $basedir/setup.sh.d/setup.sh

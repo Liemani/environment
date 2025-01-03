@@ -91,7 +91,7 @@ highlight NonText ctermfg=235
 highlight SpecialKey ctermfg=235
 " verbose highlight <highlight group>
 
-" set cursorline
+set cursorline
 
 set hlsearch
 
@@ -192,3 +192,8 @@ let @w=':13,$foldo!'  " fold 42header
 let @e='"*y'
 " Without last space in the string ending with ^M, ^J is followed to register 'd'
 let @d=':r !date "+\%F \%a" '
+
+"command
+:command! Removecomments %s/\/\/.*/
+:command! Removeemptyspacelines %s/^\s\+$/
+:command! Removefollowingnewlines normal GV[]2jD
