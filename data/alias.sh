@@ -27,7 +27,6 @@ alias shrc='. $HOME/.'"$shell"'rc'
 
 ## vim
 alias vimvimrc='vim $environment/data/.vimrc'
-alias vimsetenvironment='vim $environment/setEnvironment.sh'
 alias vimgitignore='vim $environment/data/.gitignore'
 alias vimrecord='vim $personal/.private/record.txt'
 alias vimdump='vim $personal/.private/dump.txt'
