@@ -18,25 +18,25 @@
 
 
 lmi_generate_dynamic_prompt() {
-    git_root=$(2>/dev/null git rev-parse --show-toplevel)
-    git_repo=$(2>/dev/null basename "$git_root")
-    git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
+  git_root=$(2>/dev/null git rev-parse --show-toplevel)
+  git_repo=$(2>/dev/null basename "$git_root")
+  git_branch=$(2>/dev/null git rev-parse --abbrev-ref HEAD)
 
-    if [ "$git_root" ]; then
-        prompt_path=${PWD##$git_root}
-    elif [[ "$PWD" == "$HOME"* ]]; then
-        prompt_path='~'${PWD##$HOME}
-    elif [[ "$PWD" == "$ENVHOME"* ]]; then
-        prompt_path='ENV~'${PWD##$ENVHOME}
-    else
-        prompt_path=$PWD
-    fi
+  if [ "$git_root" ]; then
+    prompt_path=${PWD##$git_root}
+  elif [[ "$PWD" == "$HOME"* ]]; then
+    prompt_path='~'${PWD##$HOME}
+  elif [[ "$PWD" == "$ENVHOME"* ]]; then
+    prompt_path='$ENVHOME'${PWD##$ENVHOME}
+  else
+  prompt_path=$PWD
+  fi
 
-    hostname=`hostname -s`
+        hostname=`hostname -s`
 
-    echo -e %F{240}$(date "+%H:%M") %F{111}$hostname %F{208}$git_repo$prompt_path %F{246}\(%F{34}$git_repo%F{246}/%F{34}$git_branch%F{246}\) %F{111}%# %f
+  echo -e %F{240}$(date "+%H:%M") %F{111}$hostname %F{208}$git_repo$prompt_path %F{246}\(%F{34}$git_repo%F{246}/%F{34}$git_branch%F{246}\) %F{111}%# %f
 
-    unset prompt_path
+  unset prompt_path
 }
 
 setopt PROMPT_SUBST

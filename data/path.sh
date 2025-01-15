@@ -8,7 +8,6 @@ export environment=$ENVHOME/.environment
   export bin=$environment/bin
   export script=$environment/script
 export local=$ENVHOME/local
-  export receive=$local/receive
 export remote=$ENVHOME/remote
   export personal=$remote/personal
     export private=$personal/.private
