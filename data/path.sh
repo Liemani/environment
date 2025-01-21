@@ -1,7 +1,7 @@
 if [[ $SHELL =~ .*/zsh ]]; then
-  ENVHOME=$(realpath $(dirname ${(%):-%x})/../..)
+  export ENVHOME=$(realpath $(dirname ${(%):-%x})/../..)
 elif [[ $SHELL =~ .*/bash ]]; then
-  ENVHOME=$(realpath $(dirname ${BASH_SOURCE[0]})/../..)
+  export ENVHOME=$(realpath $(dirname ${BASH_SOURCE[0]})/../..)
 fi
 
 export environment=$ENVHOME/.environment

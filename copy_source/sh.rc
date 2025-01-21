@@ -1,7 +1,8 @@
-# activate environment
-activate=$environment/activate.sh
-if [ -e "$activate" ]; then
-  . $activate
-else
-  . ~/.environment/activate.sh
+# will activate environment
+ENVHOME=$environment/activate.sh
+if [ ! -e "$ENVHOME" ]; then
+  ENVHOME=~/.environment/activate.sh
 fi
+echo ENVHOME=$ENVHOME
+. $ENVHOME
+# did activate environment
