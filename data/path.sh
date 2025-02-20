@@ -7,15 +7,12 @@ fi
 export environment=$ENVHOME/.environment
   export bin=$environment/bin
   export script=$environment/script
-export local=$ENVHOME/local
-export remote=$ENVHOME/remote
-  export personal=$remote/personal
-    export private=$personal/.private
-      export address=$private/data/address.sh
-    export library_cpp=$personal/library_cpp
-    export playground=$personal/playground
-  export extern=$remote/extern
-        export shellscript=$script/sh
-  export work=$remote/work
+
+export personal=$ENVHOME/personal
+  export private=$personal/.private
+    export address=$private/data/address.sh
+  export playground=$personal/0_areas/playground
+
+export work=$ENVHOME/work
 
 export derivedData=$HOME/Library/Developer/Xcode/DerivedData
